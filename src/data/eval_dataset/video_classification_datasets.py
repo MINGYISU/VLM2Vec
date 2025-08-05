@@ -24,7 +24,8 @@ def data_prepare(batch_dict, **kwargs):
         save_frames(video_path=video_path, frame_dir=frame_dir, max_frames_saved=max_frames_saved)
         video_frame_paths = process_video_frames(frame_dir, num_frames=num_frames)
 
-        query_texts.append([process_input_text(DATASET_INSTRUCTION[dataset_name], model_backbone, add_video_token=True)])
+        prompt = DATASET_INSTRUCTION[dataset_name]
+        query_texts.append([process_input_text(prompt, model_backbone, add_video_token=True)])
         query_images.append([ImageVideoInstance(
             bytes=[None] * len(video_frame_paths),
             paths=video_frame_paths,
@@ -36,6 +37,7 @@ def data_prepare(batch_dict, **kwargs):
         dataset_info = {
             "cand_names": [label],
             "label_name": label,
+            "prompt": prompt,
         }
         dataset_infos.append(dataset_info)
 

@@ -48,3 +48,5 @@ workspace.xml
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+prompt_test_output/

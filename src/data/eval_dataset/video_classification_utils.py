@@ -22,10 +22,20 @@ VIDEOCLS_LABEL_MAPPING = {
     'Breakfast': BREAKFAST_LABELS
 }
 
+TEMP_PROMPT = """You are provided with visual input from a video. Your objective is to classify the video into its most appropriate content category. Focus on identifying the core activity, context, or subject represented. Rely on visual cues such as objects, people, settings, and actions to determine the category. """
+
+# DATASET_INSTRUCTION = {
+#     'Kinetics-700': 'Recognize the category of the video content.',
+#     'SmthSmthV2': 'What actions or object interactions are being performed by the person in the video?',
+#     'UCF101': 'What activities or sports are being performed by the person in the video?',
+#     'HMDB51': 'What actions or objects interactions are the person in the video doing?',
+#     'Breakfast': 'Recognize the breakfast type that the person is cooking in the video. '
+# }
+
 DATASET_INSTRUCTION = {
-    'Kinetics-700': 'Recognize the category of the video content.',
-    'SmthSmthV2': 'What actions or object interactions are being performed by the person in the video?',
-    'UCF101': 'What activities or sports are being performed by the person in the video?',
-    'HMDB51': 'What actions or objects interactions are the person in the video doing?',
-    'Breakfast': 'Recognize the breakfast type that the person is cooking in the video. '
+    'Kinetics-700': TEMP_PROMPT,
+    'SmthSmthV2': TEMP_PROMPT,
+    'UCF101': TEMP_PROMPT,
+    'HMDB51': TEMP_PROMPT,
+    'Breakfast': TEMP_PROMPT
 }
