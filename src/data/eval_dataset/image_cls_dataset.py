@@ -4,6 +4,7 @@ import sys
 from datasets import load_dataset
 from src.data.eval_dataset.base_eval_dataset import AutoEvalPairDataset, add_metainfo_hook, RESOLUTION_MAPPING
 from src.model.processor import process_input_text
+from .image_cls_utils import *
 
 
 @add_metainfo_hook
@@ -15,6 +16,7 @@ def data_prepare(batch_dict, *args, **kwargs):
     for qry_inst, qry_text, qry_img_path, tgt_texts in (
             zip(batch_dict['qry_inst'], batch_dict['qry_text'], batch_dict['qry_img_path'], batch_dict['tgt_text'])):
         qry_inst = qry_inst.replace("<|image_1|>", "")
+        qry_inst = distracting_prompt + "\n" + qry_inst
         qry_text = process_input_text(qry_inst, model_backbone, text=qry_text, add_image_token=True)
         # to stay consistent with v1 eval
         qry_text = qry_text.replace(" \n", "\n") + "\n"
