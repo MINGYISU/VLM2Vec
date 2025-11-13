@@ -46,6 +46,9 @@ class DataArguments:
     resize_max_pixels: int = field(default=28*28*1280, metadata={"help": "The max pixels of the image to resize the image. This is only works when `--resize_use_processor true`."})
     image_decay_factor: float = field(default=None, metadata={"help": "The image decay factor for resizing temporal images"})
     num_hardneg: int = field(default=0, metadata={"help": "hard negative number"})
+    query_instruction_prompt: str = field(default="", metadata={"help": "prompt instructions to be added before each query"})
+    query_instruction_prompt_file: str = field(default=None, metadata={"help": "a file containing query prompt instructions to be added before each query"})
+    query_instruction_prompt_id: str = field(default="short_1", metadata={"help": "which prompt instruction to use, see prompt_list.yaml for more details"})
 
 
 @dataclass

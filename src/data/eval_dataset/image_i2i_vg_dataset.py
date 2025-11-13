@@ -1,5 +1,6 @@
 import os
 import sys
+import yaml
 
 from datasets import load_dataset
 from src.data.eval_dataset.base_eval_dataset import AutoEvalPairDataset, add_metainfo_hook, RESOLUTION_MAPPING
@@ -10,11 +11,12 @@ from src.model.processor import process_input_text
 def data_prepare(batch_dict, *args, **kwargs):
     image_resolution, model_backbone = kwargs['image_resolution'], kwargs['model_backbone']
     image_root = kwargs['image_root']
+    query_instruction_prompt = kwargs.get('query_instruction_prompt', "")
 
     query_texts, query_images, cand_texts, cand_images, dataset_infos = [], [], [], [], []
     for qry_inst, qry_text, qry_img_path, tgt_inst, tgt_captions, tgt_img_paths in (
             zip(batch_dict['qry_inst'], batch_dict['qry_text'], batch_dict['qry_img_path'], batch_dict['tgt_inst'], batch_dict['tgt_text'], batch_dict['tgt_img_path'])):
-        qry_inst = "\n" + qry_inst.replace("<|image_1|>", "").strip()
+        qry_inst = query_instruction_prompt + "\n" + qry_inst.replace("<|image_1|>", "").strip()
         qry_text = process_input_text(qry_inst, model_backbone, text=qry_text, add_image_token=True)
         # to stay consistent with v1 eval
         qry_text = qry_text.replace(" \n", "\n") + "\n"
@@ -69,6 +71,15 @@ def load_image_i2i_vg_dataset(model_args, data_args, *args, **kwargs):
 
     kwargs['model_backbone'] = model_args.model_backbone
     kwargs['image_resolution'] = data_args.image_resolution
+    if data_args.query_instruction_prompt_file:
+        with open(data_args.query_instruction_prompt_file, 'r') as f:
+            prompt_list = yaml.load(f, Loader=yaml.FullLoader)
+        if data_args.query_instruction_prompt_id in prompt_list[dataset_name]['query']:
+            kwargs['query_instruction_prompt'] = prompt_list[dataset_name]['query'][data_args.query_instruction_prompt_id]
+        else:
+            raise ValueError(f"query_instruction_prompt_id {data_args.query_instruction_prompt_id} not found in prompt_list.yaml")
+    else:
+        kwargs['query_instruction_prompt'] = "Identify the object in the image." # default prompt
 
     dataset = dataset.map(lambda x: data_prepare(x, **kwargs), batched=True,
                           batch_size=256, num_proc=4,

@@ -1,0 +1,72 @@
+ViDoRe_arxivqa:
+  qry:
+    rephrased_1: 
+    rephrased_2:
+    rephrased_3:
+    short_1:
+    short_2:
+    short_3:
+    long_1:
+    long_2:
+    long_3:
+    distractor_1:
+    distractor_2:
+    distractor_3:
+  tqt:
+ViDoRe_docvqa:
+  qry:
+  tqt:
+ViDoRe_infovqa:
+  qry:
+  tqt:
+ViDoRe_tabfquad:
+  qry:
+  tqt:
+ViDoRe_tatdqa:
+  qry:
+  tqt:
+ViDoRe_shiftproject:
+  qry:
+  tqt:
+ViDoRe_syntheticDocQA_artificial_intelligence:
+  qry:
+  tqt:
+ViDoRe_syntheticDocQA_energy:
+  qry:
+  tqt:
+ViDoRe_syntheticDocQA_government_reports:
+  qry:
+  tqt:
+ViDoRe_syntheticDocQA_healthcare_industry:
+  qry:
+  tqt:
+VisRAG_ArxivQA:
+  qry:
+  tqt:
+VisRAG_ChartQA:
+  qry:
+  tqt:
+VisRAG_MP-DocVQA:
+  qry:
+  tqt:
+VisRAG_SlideVQA:
+  qry:
+  tqt:
+VisRAG_InfoVQA:
+  qry:
+  tqt:
+VisRAG_PlotQA:
+  qry:
+  tqt:
+ViDoSeek-page:
+  qry:
+  tqt:
+ViDoSeek-doc:
+  qry:
+  tqt:
+MMLongBench-doc:
+  qry:
+  tqt:
+MMLongBench-page:
+  qry:
+  tqt:

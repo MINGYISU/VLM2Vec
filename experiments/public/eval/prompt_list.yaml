@@ -1,0 +1,515 @@
+Country211:
+    query:
+        rephrased_1: "Identify the country depicted in the image"
+        rephrased_2: "Which country does this image represent?"
+        rephrased_3: "From the image, can you tell which country it is?"
+        short_1: "Which country?"
+        short_2: "Name the country shown"
+        short_3: "Country name?"
+        long_1: "Taking into account the diverse and potentially subtle features present within the image, including but not limited to cultural, geographical, and architectural elements, can you deduce with reasoned analysis which country is most likely depicted, even if some clues are ambiguous or overlapping with other nations?"
+        long_2: "This image appears to showcase a specific country, yet the visual cues may be nuanced or open to interpretation; please provide a detailed classification of the nation shown, explaining your reasoning and considering possible confounding factors that might make identification challenging."
+        long_3: "By thoroughly evaluating all elements present in the image—such as landmarks, attire, natural scenery, and any implicit contextual hints—can you logically infer which country is depicted, especially in cases where the evidence might point to multiple plausible options?"
+        distractor_1: "Did you know that some countries have multiple time zones, which can affect daily life and business operations? Now, identify the country in the image."
+        distractor_2: "Many nations share similar architectural styles due to historical influences, making visual identification tricky. Please name the country shown."
+        distractor_3: "Tourism can introduce foreign elements into local culture, sometimes blending traditions. Which country is depicted here?"
+
+ImageNet-1K:
+    query:
+        rephrased_1: "Classify the object in the image"
+        rephrased_2: "What is the main subject of the image?"
+        rephrased_3: "Identify the object shown in the picture"
+        short_1: "What object?"
+        short_2: "Name the object shown"
+        short_3: "Object name?"
+        long_1: "Taking into account all discernible features and characteristics within the image, including shape, texture, color, and context, can you provide a reasoned identification of the object depicted, even if the object shares similarities with other categories or is partially obscured?"
+        long_2: "This image is intended to showcase a particular object, but the visual information may be complex or ambiguous; please classify the item shown, detailing your thought process and addressing any aspects that could complicate a straightforward identification."
+        long_3: "By analyzing the elements present in the image—such as background context, object orientation, and any overlapping features—can you logically determine what object is depicted, especially if the image could be interpreted in multiple ways?"
+        distractor_1: "Lighting and shadows can dramatically change how objects appear in photos, sometimes making recognition difficult. What object is in the image?"
+        distractor_2: "Backgrounds in images often provide context, but can also distract from the main subject. Name the object shown."
+        distractor_3: "Some objects are commonly confused due to similar shapes or colors. Identify the object in this picture."
+
+N24News:
+    query:
+        rephrased_1: "What is the main topic of the news image?"
+        rephrased_2: "Describe the subject of the news photo"
+        rephrased_3: "What event or topic does this news image depict?"
+        short_1: "News topic?"
+        short_2: "Main news subject?"
+        short_3: "News event?"
+        long_1: "Taking into account all visible features and contextual clues within the news image, including people, objects, settings, and any implicit references, can you deduce the main topic or event depicted, even if the image is open to multiple interpretations or lacks explicit indicators?"
+        long_2: "This news image appears to showcase a specific event or topic, but the subject matter may be subtle or multifaceted; please classify the subject shown, providing a detailed rationale and considering any factors that might make the identification process more complex."
+        long_3: "By thoroughly examining all elements present in the news image—such as expressions, actions, background details, and possible symbolic meanings—can you logically infer the main topic, especially in cases where the image could be associated with several different news stories?"
+        distractor_1: "News images sometimes use color grading to evoke emotion or highlight certain details. What is the main topic of this news image?"
+        distractor_2: "The composition of a news photo can influence how viewers interpret the story. Please state the main news subject."
+        distractor_3: "Visual storytelling in journalism often relies on subtle cues. What event does this image depict?"
+
+HatefulMemes:
+    query:
+        rephrased_1: "Determine if the meme is hateful or not"
+        rephrased_2: "Is this meme offensive or hateful?"
+        rephrased_3: "Classify the meme as hateful or non-hateful"
+        short_1: "Hateful or not?"
+        short_2: "Offensive meme?"
+        short_3: "Hate classification?"
+        long_1: "Taking into account the full content of the meme, including text, imagery, and any underlying context or cultural references, can you determine with nuanced reasoning whether it should be classified as hateful or not, especially if the message is implicit or open to interpretation?"
+        long_2: "This meme may contain material that could be considered offensive or controversial; please classify it as hateful or non-hateful, providing a detailed explanation of your reasoning and considering any ambiguous or borderline cases that might complicate the decision."
+        long_3: "By analyzing all elements present in the meme—such as language, symbolism, and potential double meanings—can you logically assess whether the meme is hateful, particularly in situations where the intent or impact is not immediately clear?"
+        distractor_1: "Internet memes often use irony or sarcasm, which can be hard to detect automatically. Is this meme hateful or not?"
+        distractor_2: "Meme formats evolve quickly, sometimes making older references hard to understand. Classify this meme as hateful or non-hateful."
+        distractor_3: "Social media trends can affect how memes are perceived by different audiences. Is this meme hateful?"
+
+VOC2007:
+    query:
+        rephrased_1: "Identify the objects present in the image"
+        rephrased_2: "What objects can be seen in the picture?"
+        rephrased_3: "List the objects depicted in the image"
+        short_1: "What objects?"
+        short_2: "Name the objects"
+        short_3: "Objects list?"
+        long_1: "Taking into account all features and details within the image, including object shapes, positions, interactions, and any contextual clues, can you identify all objects present, even if some are partially hidden or visually similar to others?"
+        long_2: "This image appears to showcase multiple objects, but the arrangement and visual complexity may make classification challenging; please list and classify the items shown, explaining your reasoning for each and addressing any ambiguities."
+        long_3: "By carefully evaluating the elements present in the image—such as overlapping objects, background context, and possible occlusions—can you logically determine the full set of objects depicted, especially in cases where identification is not straightforward?"
+        distractor_1: "Object detection models sometimes struggle with occluded or overlapping items in images. What objects are present in this image?"
+        distractor_2: "Annotating images for benchmarks requires careful attention to detail. List the objects you see."
+        distractor_3: "Multi-object scenes can complicate recognition tasks for both humans and machines. Name the objects depicted."
+
+SUN397:
+    query:
+        rephrased_1: "Classify the scene shown in the image"
+        rephrased_2: "What type of environment is depicted in the photo?"
+        rephrased_3: "Identify the scene category of the image"
+        short_1: "Scene type?"
+        short_2: "Environment?"
+        short_3: "Scene category?"
+        long_1: "Taking into account the multitude of visual features, spatial arrangements, and subtle environmental cues present in the image, can you deduce through layered reasoning the specific scene or environment depicted, especially if the boundaries between scene categories are ambiguous or overlapping?"
+        long_2: "This image appears to showcase a particular scene, yet the environmental indicators may be nuanced, context-dependent, or open to multiple interpretations; please provide a detailed classification of the environment shown, explaining your logic and considering factors that could complicate a straightforward identification."
+        long_3: "By thoroughly evaluating all elements present in the image—such as lighting, architectural features, natural surroundings, and any implicit contextual hints—can you logically infer the scene depicted, particularly in cases where the evidence might support several plausible scene categories?"
+        distractor_1: "Ambient lighting can change the mood and appearance of a scene, sometimes making classification harder. What scene is shown in the image?"
+        distractor_2: "Seasonal changes affect how outdoor environments look, even in the same location. Identify the environment depicted."
+        distractor_3: "Human activity can alter natural landscapes, adding complexity to scene understanding. What is the scene category here?"
+
+Place365:
+    query:
+        rephrased_1: "What place or location is shown in the image?"
+        rephrased_2: "Identify the location depicted in the picture"
+        rephrased_3: "Describe the place shown in the image"
+        short_1: "Place?"
+        short_2: "Location?"
+        short_3: "Place name?"
+        long_1: "Taking into account all discernible features, contextual clues, and possible cultural or geographical markers within the image, can you deduce with reasoned analysis the specific place or location depicted, even if the visual evidence is subtle or could be interpreted in multiple ways?"
+        long_2: "This image is intended to showcase a particular location, but the cues may be complex, layered, or ambiguous; please classify the place shown, detailing your thought process and addressing any aspects that might complicate a straightforward identification."
+        long_3: "By analyzing the elements present in the image—such as architectural style, landscape, signage, and any implicit references—can you logically determine the place depicted, especially if the image could plausibly represent more than one location?"
+        distractor_1: "Urban planning decisions shape the look and feel of cityscapes, influencing visual diversity. What place is shown in the image?"
+        distractor_2: "Historical events often leave lasting marks on architecture and public spaces. Name the location depicted."
+        distractor_3: "Transportation networks can affect how public spaces are developed and used. What is the place in this picture?"
+
+ImageNet-A:
+    query:
+        rephrased_1: "Classify the object in the challenging image"
+        rephrased_2: "What is the main subject of this difficult image?"
+        rephrased_3: "Identify the object shown in this image"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account the challenging nature of the image, including visual distortions, occlusions, and atypical perspectives, can you deduce through complex reasoning the identity of the object depicted, even if the clues are subtle or misleading?"
+        long_2: "This difficult image presents an object in a unique and potentially confusing way; please classify the object shown, providing a detailed explanation of your reasoning and considering any factors that might make identification nontrivial."
+        long_3: "By thoroughly analyzing the complexity of the object in this image—such as unusual shapes, unexpected contexts, and overlapping features—can you logically determine what it is, especially if the image could be interpreted in several different ways?"
+        distractor_1: "Some objects in challenging images may appear distorted due to camera angles or motion blur, making recognition harder. What object is shown in this image?"
+        distractor_2: "Visual artifacts and occlusions can sometimes hide key features of an object. Please name the object depicted."
+        distractor_3: "Unusual perspectives can make familiar objects look unfamiliar. Identify the object in the image."
+
+ImageNet-R:
+    query:
+        rephrased_1: "Classify the object in the rendition image"
+        rephrased_2: "What is the main subject of this stylized image?"
+        rephrased_3: "Identify the object shown in this rendition"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account the stylized nature of the image, including artistic distortions, abstract representations, and unconventional color schemes, can you deduce through layered reasoning the identity of the object depicted, even if the style obscures typical features?"
+        long_2: "This rendition image presents an object in a unique and possibly abstract style; please classify the object shown, explaining your logic and considering any artistic choices that might complicate identification."
+        long_3: "By thoroughly evaluating the artistic representation of the object in this image—such as exaggerated forms, symbolic elements, and nonstandard visual cues—can you logically determine what it is, particularly in cases where the artistic style makes recognition difficult?"
+        distractor_1: "Artistic renditions often exaggerate or abstract certain features, which can confuse recognition models. What object is shown in this stylized image?"
+        distractor_2: "Nonstandard color schemes and symbolic elements may obscure the true identity of an object. Name the object depicted."
+        distractor_3: "Abstract representations can make it difficult to distinguish between similar objects. Identify the object in this rendition."
+
+ObjectNet:
+    query:
+        rephrased_1: "Identify the object in the image under unusual conditions"
+        rephrased_2: "What object is depicted in this challenging image?"
+        rephrased_3: "Classify the object shown in this image"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account the unusual conditions under which the image was captured, including nonstandard lighting, unexpected angles, and environmental distortions, can you deduce through complex reasoning the identity of the object depicted, even if the presentation deviates from typical examples?"
+        long_2: "This image presents an object under challenging and atypical conditions; please classify the object shown, providing a detailed rationale and considering any factors that might make identification especially difficult."
+        long_3: "By thoroughly analyzing the atypical presentation of the object in this image—such as altered proportions, environmental interference, and contextually confusing elements—can you logically determine what it is, particularly in cases where the object's appearance is far from ordinary?"
+        distractor_1: "Unusual conditions like poor lighting or unexpected angles can make object identification a challenge. What object is present in this image?"
+        distractor_2: "Environmental distortions may alter the appearance of everyday items. Please name the object shown."
+        distractor_3: "Atypical presentations can cause confusion even for familiar objects. Identify the object depicted."
+
+# RET t -> i:
+VisDial:
+    query:
+        rephrased_1: "Based on the dialogue, select the relevant image"
+        rephrased_2: "Choose the image that matches the conversation"
+        rephrased_3: "Identify the image corresponding to the dialogue"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full context of the dialogue, including all questions and answers exchanged, can you deduce through comprehensive reasoning which image best corresponds to the conversation, even if some elements of the dialogue are ambiguous or open to multiple interpretations?"
+        long_2: "This dialogue may reference various visual elements; please select the image that aligns most closely with the content of the conversation, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the dialogue—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being discussed, especially in cases where multiple images could potentially fit the conversation?"
+        distractor_1: "Dialogues can contain subtle hints that are easy to overlook. Based on the conversation, which image should you select?"
+        distractor_2: "Some dialogues may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the dialogue."
+
+MSCOCO_t2i:
+    query:
+        rephrased_1: "Select the image that corresponds to the given text description"
+        rephrased_2: "Choose the image matching the provided caption"
+        rephrased_3: "Identify the image described by the text"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full content of the text description, including all details and nuances, can you deduce through comprehensive reasoning which image best corresponds to the caption, even if some elements of the description are ambiguous or open to multiple interpretations?"
+        long_2: "This text description may reference various visual elements; please select the image that aligns most closely with the content of the caption, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the text—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being described, especially in cases where multiple images could potentially fit the description?"
+        distractor_1: "Text descriptions can contain subtle hints that are easy to overlook. Based on the caption, which image should you select?"
+        distractor_2: "Some descriptions may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the text."
+
+VisualNews_t2i:
+    query:
+        rephrased_1: "Select the image that corresponds to the news caption"
+        rephrased_2: "Choose the image matching the provided news description"
+        rephrased_3: "Identify the image described by the news text"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full content of the news caption, including all details and nuances, can you deduce through comprehensive reasoning which image best corresponds to the description, even if some elements of the text are ambiguous or open to multiple interpretations?"
+        long_2: "This news caption may reference various visual elements; please select the image that aligns most closely with the content of the description, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the news text—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being described, especially in cases where multiple images could potentially fit the description?"
+        distractor_1: "News captions can contain subtle hints that are easy to overlook. Based on the description, which image should you select?"
+        distractor_2: "Some news texts may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the news caption."
+
+WebQA:
+    query:
+        rephrased_1: "Select the image that answers the given question"
+        rephrased_2: "Choose the image relevant to the provided question"
+        rephrased_3: "Identify the image that corresponds to the question"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full context of the question, including all details and nuances, can you deduce through comprehensive reasoning which image best answers the query, even if some elements of the question are ambiguous or open to multiple interpretations?"
+        long_2: "This question may reference various visual elements; please select the image that aligns most closely with the content of the query, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the question—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being asked about, especially in cases where multiple images could potentially fit the query?"
+        distractor_1: "Questions can contain subtle hints that are easy to overlook. Based on the query, which image should you select?"
+        distractor_2: "Some questions may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the question."
+
+
+EDIS:
+    query:
+        rephrased_1: "Select the image that corresponds to the educational description"
+        rephrased_2: "Choose the image matching the provided educational text"
+        rephrased_3: "Identify the image described by the educational content"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full content of the educational description, including all details and nuances, can you deduce through comprehensive reasoning which image best corresponds to the text, even if some elements of the description are ambiguous or open to multiple interpretations?"
+        long_2: "This educational content may reference various visual elements; please select the image that aligns most closely with the information provided, offering a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the educational text—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being described, especially in cases where multiple images could potentially fit the description?"
+        distractor_1: "Educational descriptions can contain subtle hints that are easy to overlook. Based on the content, which image should you select?"
+        distractor_2: "Some educational texts may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the educational description."
+
+Wiki-SS-NQ:
+    query:
+        rephrased_1: "Select the image that answers the given Wiki question"
+        rephrased_2: "Choose the image relevant to the provided Wiki query"
+        rephrased_3: "Identify the image that corresponds to the Wiki question"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the full context of the Wiki question, including all details and nuances, can you deduce through comprehensive reasoning which image best answers the query, even if some elements of the question are ambiguous or open to multiple interpretations?"
+        long_2: "This Wiki question may reference various visual elements; please select the image that aligns most closely with the content of the query, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the Wiki question—such as specific references, implied meanings, and contextual clues—can you logically determine which image is being asked about, especially in cases where multiple images could potentially fit the query?"
+        distractor_1: "Wiki questions can contain subtle hints that are easy to overlook. Based on the query, which image should you select?"
+        distractor_2: "Some Wiki questions may reference abstract concepts that are hard to visualize. Choose the relevant image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the Wiki question."
+
+#RET i -> i:
+CIRR:
+    query:
+        rephrased_1: "Based on the image and instruction, select the relevant image"
+        rephrased_2: "Choose the image that matches the given instruction"
+        rephrased_3: "Identify the image corresponding to the input image and instruction"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the input image and the provided instruction, can you deduce through comprehensive reasoning which target image best corresponds to the instruction, even if some elements are ambiguous or open to multiple interpretations?"
+        long_2: "This instruction may reference various visual elements in relation to the input image; please select the target image that aligns most closely with the content of the instruction, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the input image and instruction—such as specific references, implied meanings, and contextual clues—can you logically determine which target image is being described, especially in cases where multiple images could potentially fit the criteria?"
+        distractor_1: "Instructions can contain subtle hints that are easy to overlook. Based on the input image and instruction, which target image should you select?"
+        distractor_2: "Some instructions may reference abstract concepts that are hard to visualize. Choose the relevant target image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the input image and instruction."
+
+NIGHTS:
+    query:
+        rephrased_1: "Based on the image and instruction, select the relevant image"
+        rephrased_2: "Choose the image that matches the given instruction"
+        rephrased_3: "Identify the image corresponding to the input image and instruction"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the input image and the provided instruction, can you deduce through comprehensive reasoning which target image best corresponds to the instruction, even if some elements are ambiguous or open to multiple interpretations?"
+        long_2: "This instruction may reference various visual elements in relation to the input image; please select the target image that aligns most closely with the content of the instruction, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the input image and instruction—such as specific references, implied meanings, and contextual clues—can you logically determine which target image is being described, especially in cases where multiple images could potentially fit the criteria?"
+        distractor_1: "Instructions can contain subtle hints that are easy to overlook. Based on the input image and instruction, which target image should you select?"
+        distractor_2: "Some instructions may reference abstract concepts that are hard to visualize. Choose the relevant target image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the input image and instruction."
+
+OVEN:
+    query:
+        rephrased_1: "Based on the image and instruction, select the relevant image"
+        rephrased_2: "Choose the image that matches the given instruction"
+        rephrased_3: "Identify the image corresponding to the input image and instruction"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the input image and the provided instruction, can you deduce through comprehensive reasoning which target image best corresponds to the instruction, even if some elements are ambiguous or open to multiple interpretations?"
+        long_2: "This instruction may reference various visual elements in relation to the input image; please select the target image that aligns most closely with the content of the instruction, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the input image and instruction—such as specific references, implied meanings, and contextual clues—can you logically determine which target image is being described, especially in cases where multiple images could potentially fit the criteria?"
+        distractor_1: "Instructions can contain subtle hints that are easy to overlook. Based on the input image and instruction, which target image should you select?"
+        distractor_2: "Some instructions may reference abstract concepts that are hard to visualize. Choose the relevant target image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the input image and instruction."
+        distractor_4: "Consider the broader context of the instruction. Which target image captures the essence of the request more effectively?"
+
+FashionIQ:
+    query:
+        rephrased_1: "Based on the image and instruction, select the relevant image"
+        rephrased_2: "Choose the image that matches the given instruction"
+        rephrased_3: "Identify the image corresponding to the input image and instruction"
+        short_1: "Select image?"
+        short_2: "Choose relevant image?"
+        short_3: "Image match?"
+        long_1: "Taking into account the input image and the provided instruction, can you deduce through comprehensive reasoning which target image best corresponds to the instruction, even if some elements are ambiguous or open to multiple interpretations?"
+        long_2: "This instruction may reference various visual elements in relation to the input image; please select the target image that aligns most closely with the content of the instruction, providing a detailed explanation of your reasoning and considering any nuances that might complicate a straightforward match."
+        long_3: "By thoroughly analyzing all aspects of the input image and instruction—such as specific references, implied meanings, and contextual clues—can you logically determine which target image is being described, especially in cases where multiple images could potentially fit the criteria?"
+        distractor_1: "Instructions can contain subtle hints that are easy to overlook. Based on the input image and instruction, which target image should you select?"
+        distractor_2: "Some instructions may reference abstract concepts that are hard to visualize. Choose the relevant target image."
+        distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the input image and instruction."
+
+# I-VG
+MSCOCO:
+    query:
+        rephrased_1: "Identify the objects present in the image"
+        rephrased_2: "What objects can be seen in the picture?"
+        rephrased_3: "List the objects depicted in the image"
+        short_1: "What objects?"
+        short_2: "Name the objects"
+        short_3: "Objects list?"
+        long_1: "Taking into account all features and details within the image, including object shapes, positions, interactions, and any contextual clues, can you identify all objects present, even if some are partially hidden or visually similar to others?"
+        long_2: "This image appears to showcase multiple objects, but the arrangement and visual complexity may make classification challenging; please list and classify the items shown, explaining your reasoning for each and addressing any ambiguities."
+        long_3: "By carefully evaluating the elements present in the image—such as overlapping objects, background context, and possible occlusions—can you logically determine the full set of objects depicted, especially in cases where identification is not straightforward?"
+        distractor_1: "Object detection models sometimes struggle with occluded or overlapping items in images. What objects are present in this image?"
+        distractor_2: "Annotating images for benchmarks requires careful attention to detail. List the objects you see."
+        distractor_3: "Multi-object scenes can complicate recognition tasks for both humans and machines. Name the objects depicted."
+
+RefCOCO:
+    query:
+        rephrased_1: "Identify the object referred to in the image"
+        rephrased_2: "What is the main subject of this picture?"
+        rephrased_3: "Classify the object being referenced in the image"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account all discernible features, contextual clues, and possible cultural or geographical markers within the image, can you deduce with reasoned analysis the specific object being referred to, even if the visual evidence is subtle or could be interpreted in multiple ways?"
+        long_2: "This image is intended to showcase a particular object, but the cues may be complex, layered, or ambiguous; please classify the object shown, detailing your thought process and addressing any aspects that might complicate a straightforward identification."
+        long_3: "By analyzing the elements present in the image—such as shape, color, context, and any implicit references—can you logically determine the object being referred to, especially if the image could plausibly represent several different items?"
+        distractor_1: "Some objects may appear distorted due to camera angles or motion blur, making recognition harder. What object is being referred to in this image?"
+        distractor_2: "Visual artifacts and occlusions can sometimes hide key features of an object. Please name the object depicted."
+        distractor_3: "Unusual perspectives can make familiar objects look unfamiliar. Identify the object in the image."
+
+RefCOCO-Matching:
+    query:
+        rephrased_1: "Identify the object referred to in the image"
+        rephrased_2: "What is the main subject of this picture?"
+        rephrased_3: "Classify the object being referenced in the image"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account all discernible features, contextual clues, and possible cultural or geographical markers within the image, can you deduce with reasoned analysis the specific object being referred to, even if the visual evidence is subtle or could be interpreted in multiple ways?"
+        long_2: "This image is intended to showcase a particular object, but the cues may be complex, layered, or ambiguous; please classify the object shown, detailing your thought process and addressing any aspects that might complicate a straightforward identification."
+        long_3: "By analyzing the elements present in the image—such as shape, color, context, and any implicit references—can you logically determine the object being referred to, especially if the image could plausibly represent several different items?"
+        distractor_1: "Some objects may appear distorted due to camera angles or motion blur, making recognition harder. What object is being referred to in this image?"
+        distractor_2: "Visual artifacts and occlusions can sometimes hide key features of an object. Please name the object depicted."
+        distractor_3: "Unusual perspectives can make familiar objects look unfamiliar. Identify the object in the image."
+
+Visual7W-Pointing:
+    query:
+        rephrased_1: "Identify the object referred to in the image"
+        rephrased_2: "What is the main subject of this picture?"
+        rephrased_3: "Classify the object being referenced in the image"
+        short_1: "What object?"
+        short_2: "Name the object"
+        short_3: "Object name?"
+        long_1: "Taking into account all discernible features, contextual clues, and possible cultural or geographical markers within the image, can you deduce with reasoned analysis the specific object being referred to, even if the visual evidence is subtle or could be interpreted in multiple ways?"
+        long_2: "This image is intended to showcase a particular object, but the cues may be complex, layered, or ambiguous; please classify the object shown, detailing your thought process and addressing any aspects that might complicate a straightforward identification."
+        long_3: "By analyzing the elements present in the image—such as shape, color, context, and any implicit references—can you logically determine the object being referred to, especially if the image could plausibly represent several different items?"
+        distractor_1: "Some objects may appear distorted due to camera angles or motion blur, making recognition harder. What object is being referred to in this image?"
+        distractor_2: "Visual artifacts and occlusions can sometimes hide key features of an object. Please name the object depicted."
+        distractor_3: "Unusual perspectives can make familiar objects look unfamiliar. Identify the object in the image."
+
+# QA
+OK-VQA:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+A-OKVQA:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+DocVQA:
+    query:
+        rephrased_1: "Answer the question based on the document image"
+        rephrased_2: "What is the answer to the question given the document picture?"
+        rephrased_3: "Provide the answer to the question using the document image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all textual elements, formatting cues, and contextual information within the document image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This document image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the document image—such as text layout, highlighted sections, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle textual cues in the document image. What is the answer based on the picture?"
+        distractor_2: "Document images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of a document can lead to different answers. What is your response?"
+
+InfographicsVQA:
+    query:
+        rephrased_1: "Answer the question based on the infographic image"
+        rephrased_2: "What is the answer to the question given the infographic picture?"
+        rephrased_3: "Provide the answer to the question using the infographic image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, data representations, and contextual information within the infographic image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This infographic image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the infographic image—such as charts, graphs, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the infographic image. What is the answer based on the picture?"
+        distractor_2: "Infographic images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an infographic can lead to different answers. What is your response?"
+
+ChartQA:
+    query:
+        rephrased_1: "Answer the question based on the chart image"
+        rephrased_2: "What is the answer to the question given the chart picture?"
+        rephrased_3: "Provide the answer to the question using the chart image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, data points, and contextual information within the chart image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This chart image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the chart image—such as axes, legends, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the chart image. What is the answer based on the picture?"
+        distractor_2: "Chart images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of a chart can lead to different answers. What is your response?"
+
+Visual7W:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+ScienceQA:
+    query:
+        rephrased_1: "Answer the science question based on the image"
+        rephrased_2: "What is the answer to the science question given the picture?"
+        rephrased_3: "Provide the answer to the science question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and scientific concepts within the image, can you deduce through complex reasoning the correct answer to the science question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the science question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the science question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some science questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering science questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+VizWiz:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+GQA:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
+
+TextVQA:
+    query:
+        rephrased_1: "Answer the question based on the image"
+        rephrased_2: "What is the answer to the question given the picture?"
+        rephrased_3: "Provide the answer to the question using the image"
+        short_1: "Answer?"
+        short_2: "What is it?"
+        short_3: "Response?"
+        long_1: "Taking into account all visual elements, contextual clues, and possible interpretations within the image, can you deduce through complex reasoning the correct answer to the question posed, even if the information is not immediately obvious or requires deeper analysis?"
+        long_2: "This image may contain various details that are relevant to answering the question; please provide a well-reasoned response, explaining your thought process and considering any ambiguities that might complicate arriving at a definitive answer."
+        long_3: "By thoroughly evaluating all aspects of the image—such as object relationships, background context, and implicit cues—can you logically determine the answer to the question, especially in cases where multiple answers could seem plausible?"
+        distractor_1: "Some questions may require understanding subtle visual cues in the image. What is the answer based on the picture?"
+        distractor_2: "Images can contain hidden details that are crucial for answering questions. Provide the answer."
+        distractor_3: "Multiple interpretations of an image can lead to different answers. What is your response?"
