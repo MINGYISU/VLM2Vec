@@ -95,7 +95,6 @@ QVHighlight:
     dataset_name: QVHighlight
     video_root: ""
     clip_root: ""
-    frame_root: video-tasks/frames/video_mret/QVHighlight/
     num_negative_clips: 9
     max_video_frames_saved: 64
     max_clip_frames_saved: 8
@@ -105,7 +104,6 @@ QVHighlight:
 Charades-STA:
     dataset_parser: moment_retrieval
     dataset_name: Charades-STA
-    data_path: video-tasks/data/charades_sta.jsonl
     video_root: ""
     clip_root: ""
     frame_root: video-tasks/frames/video_mret/Charades_STA
@@ -118,10 +116,17 @@ Charades-STA:
 MomentSeeker:
     dataset_parser: momentseeker
     dataset_name: MomentSeeker
-    data_path: video-tasks/data/momentseeker.jsonl
     video_root: ""
     clip_root: ""
-    raw_dataset_abspath: ""
+    frame_root: video-tasks/frames/video_mret/MomentSeeker
+    num_negative_clips: 9
+    num_video_frames: 8
+    eval_type: local
+momentseeker_1k8:
+    dataset_parser: momentseeker
+    dataset_name: momentseeker_1k8
+    video_root: ""
+    clip_root: ""
     frame_root: video-tasks/frames/video_mret/MomentSeeker
     num_negative_clips: 9
     num_video_frames: 8
@@ -162,7 +167,6 @@ MVBench:
 ActivityNetQA:
     dataset_parser: activitynetqa
     dataset_name: ActivityNetQA
-    data_path: video-tasks/data/activitynetqa.jsonl
     video_root: video-tasks/videos/video_qa/ActivityNetQA
     frame_root: video-tasks/frames/video_qa/ActivityNetQA
     max_frames_saved: 64

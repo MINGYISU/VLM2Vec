@@ -8,9 +8,11 @@
 <img style="height:22pt" src="https://img.shields.io/badge/-Code-green?style=flat&logo=github"></a>
 <a target="_blank" href="https://tiger-ai-lab.github.io/VLM2Vec/">
 <img style="height:22pt" src="https://img.shields.io/badge/-🌐%20Website-red?style=flat"></a>
-<a target="_blank" href="https://huggingface.co/VLM2Vec">
-<img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset-red?style=flat"></a>
 <a target="_blank" href="https://huggingface.co/datasets/TIGER-Lab/MMEB-V2">
+<img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset(V2)-red?style=flat"></a>
+<a target="_blank" href="https://huggingface.co/datasets/TIGER-Lab/MMEB-eval">
+<img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset(V1)-red?style=flat"></a>
+<a target="_blank" href="https://huggingface.co/VLM2Vec">
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Models-red?style=flat"></a>
 <a target="_blank" href="https://huggingface.co/spaces/TIGER-Lab/MMEB-Leaderboard">
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Leaderboard-red?style=flat"></a>
@@ -21,9 +23,11 @@
 
 This repository contains the official code and data for **VLM2Vec-V2**, a unified framework for learning powerful multimodal embeddings across diverse visual formats including images, videos, and visual documents.
 
-Our work introduces **MMEB-V2**, a comprehensive benchmark with 57 tasks designed to systematically evaluate embedding models across these modalities. VLM2Vec-V2 sets a new state-of-the-art, outperforming strong baselines across all categories.
+Our work introduces **MMEB-V2**, a comprehensive benchmark with 78 tasks designed to systematically evaluate embedding models across these modalities. VLM2Vec-V2 sets a new state-of-the-art, outperforming strong baselines across all categories.
 
 This is an open-source project, and we welcome contributions from the community. We are particularly interested in additions of new functionalities, support for new datasets, bug fixes, and improvements to documentation. Please feel free to open an issue to discuss your ideas or submit a pull request!
+
+📌 Please see our CHANGELOG for the latest features and bug fixes! [![CHANGELOG](https://img.shields.io/badge/View-CHANGELOG-blue)](./CHANGELOG.md)
 
 
 > ## 🚨 Major V2 Update Alert (June 2025) 🚨
@@ -41,8 +45,9 @@ This is an open-source project, and we welcome contributions from the community.
 ---
 
 ## 🔥 News
-- **[2025-05] VLM2Vec-v2 is released!** We introduce a unified embedding framework for **images, videos, and visual documents**. Our new **MMEB-V2 benchmark**, featuring 57 diverse tasks, is also available. The VLM2Vec-V2 model outperforms previous versions and strong specialized baselines.
-- [2025-01] 🎉 **VLM2Vec is accepted to ICLR 2025.**
+- **[2025-05] VLM2Vec-v2 is released!** We introduce a unified embedding framework for **images, videos, and visual documents**. Our new **MMEB-V2 benchmark**, featuring 78 diverse tasks, is also available. The VLM2Vec-V2 model outperforms previous versions and strong specialized baselines.
+- **[2025-01] 🎉 VLM2Vec is accepted to ICLR 2025.**
+- **[2024-10]** The technical report, code, data, and model for VLM2Vec are all available online.
 
 <details>
   <summary>📜 View Older Updates</summary>
@@ -53,13 +58,12 @@ This is an open-source project, and we welcome contributions from the community.
 - [2024-12] We have released the [MMEB leaderboard](https://huggingface.co/spaces/TIGER-Lab/MMEB). Feel free to contact us if you want to include your model.
 - [2024-12] We have released a new variant of VLM2Vec built on the LLaVa-Next backbone, which is currently our best-performing version: https://huggingface.co/TIGER-Lab/VLM2Vec-LLaVa-Next.
 - [2024-10] VLM2Vec has been integrated into [vLLM](https://github.com/vllm-project/vllm/blob/main/examples/offline_inference_vision_language_embedding.py).
-- [2024-10] The technical report, code, data, and model for VLM2Vec are all available online.
 
 </details>
 
 ## Key Updates
 - Unified framework for training and evaluating embedding models for three modalities of data: images, videos, and visual documents.
-- MMEB v2 Benchmark: Extend v1 benchmark with videos and visdoc tasks, including 81 tasks in total.
+- MMEB v2 Benchmark: Extend v1 benchmark with videos and visdoc tasks, including 78 tasks in total.
 - VLM2Vec-v2.0: brand-new embedding model based on Qwen2-VL-2B.
 - Easy configuration of training and evaluation using yaml files (see examples in `experiments/release`).
 - Easy extension of new datasets by creating and registering customized data loader (see examples in `src/dataset/`).
@@ -71,12 +75,12 @@ This is an open-source project, and we welcome contributions from the community.
 2. **Reset Your Local Repository to V2.** Run the following commands to fetch the new `main` branch and reset your local copy to match it.
 
 ```bash
-    # Make sure you are on your main branch first
-    git checkout main
-    # Fetch all recent updates from the remote and remove stale branch references
-    git fetch --all --prune
-    # Force your local main branch to match the new remote main branch
-    git reset --hard origin/main
+# Make sure you are on your main branch first
+git checkout main
+# Fetch all recent updates from the remote and remove stale branch references
+git fetch --all --prune
+# Force your local main branch to match the new remote main branch
+git reset --hard origin/main
 ```
 
 
@@ -109,7 +113,7 @@ We introduce **MMEB-V2**, an expanded benchmark that includes **78 total dataset
 <img width="768" alt="MMEB-V2 Overview" src="assets/mmeb_v2.png">
 
 ## Data Download
-Please refer to `experiments/release_public/data/download_data.sh`.
+Please refer to `experiments/public/data/download_data.sh`.
 
 ## Training
 Our training process uses a curated dataset from three main sources: video-language data (LLaVA-Hound), visual document data (Vidore, VisRAG), and image-text data (MMEB-train). We use an interleaved sub-batching strategy for stable and effective contrastive learning.
@@ -126,7 +130,7 @@ DDP inference on multiple GPUs is supported. The whole evaluation process is str
 - MomentSeeker: we recommend using a single GPU with a batch size of 10. This is due to a limitation in baseline processors that cannot handle mixed batches of image and text-only data.
 
 ## Citation
-```
+```bibtex
 @article{jiang2024vlm2vec,
   title={VLM2Vec: Training Vision-Language Models for Massive Multimodal Embedding Tasks},
   author={Jiang, Ziyan and Meng, Rui and Yang, Xinyi and Yavuz, Semih and Zhou, Yingbo and Chen, Wenhu},
@@ -146,4 +150,3 @@ DDP inference on multiple GPUs is supported. The whole evaluation process is str
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=TIGER-AI-Lab/VLM2Vec&type=Date)](https://star-history.com/#TIGER-AI-Lab/VLM2Vec&Date)
-
