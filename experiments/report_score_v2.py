@@ -10,30 +10,40 @@ from datetime import datetime
 # Fill in the metadata for each experiment. `None` will become `null` in the JSON.
 
 EXPERIMENTS = [
+    # {
+    #     "path": "vlm2vec_exps/VLM2Vec-Qwen2VL-V2.0-2B/",
+    #     "metadata": {
+    #         "model_name": "VLM2Vec-Qwen2VL-V2.0-2B",
+    #         "model_size": "2B parameters",
+    #         "embedding_dimension": None, # Please fill in
+    #         "max_length_tokens": None,   # Please fill in
+    #         "model_release_date": "2025-04-01", # Please adjust this date
+    #         "score_source": "",           # e.g., "Self-Reported" or "TIGER-Lab"
+    #         "url": ""                    # e.g., Paper, GitHub, or Hugging Face link
+    #     }
+    # },
+    # {
+    #     "path": "vlm2vec_exps/VLM2Vec-Qwen2VL-V2.1-2B/",
+    #     "metadata": {
+    #         "model_name": "VLM2Vec-Qwen2VL-V2.1-2B",
+    #         "model_size": "2B parameters",
+    #         "embedding_dimension": None, # Please fill in
+    #         "max_length_tokens": None,   # Please fill in
+    #         "model_release_date": "2025-05-15", # Please adjust this date
+    #         "score_source": "",           # e.g., "Self-Reported" or "TIGER-Lab"
+    #         "url": ""                    # e.g., Paper, GitHub, or Hugging Face link
+    #     }
+    # },
     {
-        "path": "vlm2vec_exps/VLM2Vec-Qwen2VL-V2.0-2B/",
+        "path": "prompt_test_output/prompt_visdoc_run/rephrased_1", 
         "metadata": {
-            "model_name": "VLM2Vec-Qwen2VL-V2.0-2B",
-            "model_size": "2B parameters",
-            "embedding_dimension": None, # Please fill in
-            "max_length_tokens": None,   # Please fill in
-            "model_release_date": "2025-04-01", # Please adjust this date
-            "score_source": "",           # e.g., "Self-Reported" or "TIGER-Lab"
-            "url": ""                    # e.g., Paper, GitHub, or Hugging Face link
+            "model_name": "Test-Model-1",
+            "model_backbone": "Test-Backbone",
+            "model_size": "123M parameters",
+            "embedding_dimension": 512,
+            "max_length_tokens": 2048,
         }
-    },
-    {
-        "path": "vlm2vec_exps/VLM2Vec-Qwen2VL-V2.1-2B/",
-        "metadata": {
-            "model_name": "VLM2Vec-Qwen2VL-V2.1-2B",
-            "model_size": "2B parameters",
-            "embedding_dimension": None, # Please fill in
-            "max_length_tokens": None,   # Please fill in
-            "model_release_date": "2025-05-15", # Please adjust this date
-            "score_source": "",           # e.g., "Self-Reported" or "TIGER-Lab"
-            "url": ""                    # e.g., Paper, GitHub, or Hugging Face link
-        }
-    },
+    }
 ]
 
 
@@ -41,22 +51,22 @@ EXPERIMENTS = [
 # TODO: Your models' metadata goes here. Please fill in the required fields.
 # ==============================================================================
 
-EXPERIMENTS = [
-    {
-        "path": ...,
-        "metadata": {
-            "model_name": ...,
-            "model_backbone": ...,
-            "model_size": ...,
-            "embedding_dimension": ...,
-            "max_length_tokens": ...,
-            "model_release_date": ...,
-            "data_source": "Self-Reported",
-            "url": ...
-        }
-    },
-    ...
-]
+# EXPERIMENTS = [
+#     {
+#         "path": ...,
+#         "metadata": {
+#             "model_name": ...,
+#             "model_backbone": ...,
+#             "model_size": ...,
+#             "embedding_dimension": ...,
+#             "max_length_tokens": ...,
+#             "model_release_date": ...,
+#             "data_source": "Self-Reported",
+#             "url": ...
+#         }
+#     },
+#     ...
+# ]
 
 
 # ==============================================================================
@@ -139,6 +149,8 @@ for experiment in EXPERIMENTS:
     # --- Construct and Save the Final JSON Report ---
     final_metadata = experiment_metadata.copy()
     final_metadata['report_generated_date'] = datetime.now().isoformat()
+    current_experiment_scores['visdoc'] = {(f'{k}-fixed' if k in ['MMLongBench-page', 'ViDoSeek-page'] else k): v for k, v in current_experiment_scores['visdoc'].items()}
+
     final_output = {
         "metadata": final_metadata,
         "metrics": current_experiment_scores

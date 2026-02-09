@@ -1,0 +1,511 @@
+Country211:
+  query:
+    rephrased_1: "Using the visual clues in the photo, determine which country it comes from."
+    rephrased_2: "Based on the content of the image, which nation is shown?"
+    rephrased_3: "Infer the country represented in this picture from its visible details."
+    short_1: "Country?"
+    short_2: "Country name"
+    short_3: "Identify country"
+    long_1: "You are viewing an image from the Country211 geolocation benchmark. Examine all available evidence in the scene, including geography, climate, architecture, language on signs, vehicles, clothing, and other cultural markers, and decide which ISO 3166 country the photo was taken in. Respond with only the country name."
+    long_2: "This image has been sampled from one of 211 possible countries and may contain subtle or overlapping cues. Analyze landmarks, vegetation, infrastructure, writing systems, and any visible symbols or flags to choose the most plausible country of origin. Provide a single country name as your answer."
+    long_3: "Treat this as a geolocation task. Carefully reason about every element in the picture, such as road markings, license plates, shop fronts, terrain, and lighting, and use them collectively to identify the country where the photo was captured. Output just the country name, without any explanation."
+    distractor_1: "Some countries share very similar climates and architectural styles despite being far apart geographically, which can make geolocation surprisingly hard even for humans. Ignoring that potential confusion, state which country is shown in the image."
+    distractor_2: "Satellite navigation and GPS tagging have made it easier to collect images from around the world, and Country211 uses such data to label photos. Focusing only on what you see in this image, which country does it come from?"
+    distractor_3: "International tourism often introduces foreign signs, brands, and clothing into local scenes, which might tempt you to overfocus on misleading details. Setting those aside, identify the country where this picture was actually taken."
+
+ImageNet-1K:
+  query:
+    rephrased_1: "Determine the class label of the main object in the image."
+    rephrased_2: "What is the primary object category shown in this picture?"
+    rephrased_3: "Using the visual content, identify the object class depicted."
+    short_1: "Object class"
+    short_2: "Main object"
+    short_3: "Object label"
+    long_1: "This image comes from the ImageNet 1K object classification benchmark. Consider the overall shape, parts, texture, color, and context, then choose the single most appropriate object category from the ImageNet 1K label space. Answer with only the class name."
+    long_2: "Treat this as a standard single label object recognition task. Analyze the foreground and background to determine which object is intended as the main subject, then map it to the closest ImageNet 1K category. Respond with the object class name only, without explanations."
+    long_3: "Even if the scene contains multiple items or partial views, focus on the central object that best matches an ImageNet 1K category. Use fine grained visual cues to disambiguate between similar classes and output exactly one object label as your answer."
+    distractor_1: "Photographers often experiment with dramatic lighting and shadows that can significantly change how an object appears in a frame. Ignoring any artistic style and focusing on recognition, what is the object class shown in this image?"
+    distractor_2: "Background clutter, such as furniture or foliage, can distract both humans and models from the true subject of a photo. Concentrating on the intended main subject, state the ImageNet style object category of the item in this picture."
+    distractor_3: "Many ImageNet categories represent visually similar objects, which can lead to near misses if details are overlooked. Carefully inspect the image and specify the single best fitting object class."
+
+N24News:
+  query:
+    rephrased_1: "What news topic or category does this image most likely illustrate?"
+    rephrased_2: "Describe the main news story or theme depicted in the photo."
+    rephrased_3: "Which event or news category is visually represented by this image?"
+    short_1: "News topic"
+    short_2: "News category"
+    short_3: "Main story"
+    long_1: "This picture comes from a multimodal news classification setting like N24News, where each image belongs to a specific news category. Examine the people, setting, activities, and any visible objects or symbols to infer the main topic or event. Respond with a short phrase naming the news topic or category."
+    long_2: "Treat the image as part of a news article. Use contextual details such as location, clothing, actions, and any recognizable public figures or symbols to decide what kind of news story it supports (for example politics, sports, business, or others). Output only the primary news category or event type."
+    long_3: "Even if the scene could be associated with multiple storylines, focus on the most salient narrative the photo would likely illustrate in a news outlet. Reason about who is involved, what is happening, and where it occurs, then state the main news topic in a few words."
+    distractor_1: "Editors often choose images that evoke emotion through color grading or composition rather than showing the entire situation literally. Putting aside any artistic choices, what is the core news topic represented in this image?"
+    distractor_2: "Headlines and captions can sometimes be sensational, but the image itself usually reflects a stable underlying category like economy, culture, or disaster. Based only on the photo, state the main news subject it would be used for."
+    distractor_3: "Newsrooms maintain large photo archives where a single image might be reused for related stories over time. Considering the most typical use, which event or news category does this picture best match?"
+
+HatefulMemes:
+  query:
+    rephrased_1: "Decide whether this meme should be labeled as hateful or not hateful."
+    rephrased_2: "Does the meme contain hateful or abusive content, or is it non-hateful?"
+    rephrased_3: "Classify the meme into the category hateful or non-hateful."
+    short_1: "Hateful label"
+    short_2: "Hate or not"
+    short_3: "Meme toxicity"
+    long_1: "You are given a meme consisting of both image and overlaid text, similar to those in the HatefulMemes benchmark. Carefully consider the combined meaning, including any stereotypes, slurs, targeted groups, or demeaning implications, and decide if it should be categorized as hateful or non-hateful. Answer with either \"hateful\" or \"non-hateful\" only."
+    long_2: "Interpret the meme holistically, including visual symbols, facial expressions, textual phrasing, and implied context. Determine whether it attacks, insults, or dehumanizes a protected or identifiable group in a way that qualifies as hate speech, or whether it does not. Respond using only the label \"hateful\" or \"non-hateful\"."
+    long_3: "Some memes use sarcasm, coded language, or indirect references to express hostility. Carefully reason about potential targets, power dynamics, and likely impact on the referenced group, then classify the meme strictly into one of two classes: hateful or non-hateful. Provide just the class name."
+    distractor_1: "Online memes often rely on irony, in-jokes, and cultural references that can blur the line between edgy humor and explicit harassment. Setting aside your own opinion of how funny it is, classify this meme as either hateful or non-hateful."
+    distractor_2: "Hate speech detection systems must handle many writing styles, from all caps shouting to small print captions. Regardless of font, color, or layout, decide whether the overall meme content is hateful or not hateful."
+    distractor_3: "Viral memes can spread quickly across platforms, so misclassifying hateful content can have large impact. Focusing purely on the combination of text and imagery, label this meme as \"hateful\" or \"non-hateful\"."
+
+VOC2007:
+  query:
+    rephrased_1: "List all object categories that appear in the image."
+    rephrased_2: "Which objects are present in this picture?"
+    rephrased_3: "Identify every object class you can see in the image."
+    short_1: "Objects present"
+    short_2: "Object list"
+    short_3: "Object classes"
+    long_1: "This is a multi object detection style image similar to those in PASCAL VOC 2007. Inspect the entire scene, including foreground and background, and identify all distinct object categories present (such as person, dog, car, etc.). Output a comma separated list of object class names."
+    long_2: "Treat the image as an annotated detection example where multiple objects may overlap or be partially occluded. Carefully scan for every recognizable VOC style category and name each one you find. Provide only the set of object class names, separated by commas."
+    long_3: "Even if some objects are small or only partly visible, use context and shape cues to infer their presence. Your goal is to recover the complete set of object categories in the scene, not counts or bounding boxes. Answer with a concise list of class labels."
+    distractor_1: "Detection benchmarks often penalize both missed small items and false positives on background clutter. With that in mind, but without worrying about boxes or masks, name all object categories that appear in this image."
+    distractor_2: "Creating ground truth for datasets like VOC 2007 requires human annotators to carefully scan every corner of each photo. Imagine you are doing that annotation and list each object class you would tag here."
+    distractor_3: "Complex scenes with many objects can be visually overwhelming, especially when items overlap or are partially hidden. Taking your time to parse the scene, which object categories are present?"
+
+SUN397:
+  query:
+    rephrased_1: "Determine the scene type shown in the image."
+    rephrased_2: "What environment or setting does this photo depict?"
+    rephrased_3: "Identify the scene category that best describes the image."
+    short_1: "Scene type"
+    short_2: "Environment type"
+    short_3: "Scene label"
+    long_1: "This image is from a scene recognition setting like SUN397, which contains many indoor and outdoor environments. Examine layout, materials, objects, and lighting to decide which scene category best fits the image (for example classroom, kitchen, forest). Respond with a short scene label only."
+    long_2: "Focus on the global structure of the image rather than individual objects: the spatial arrangement, whether it is inside or outside, man made or natural, and any characteristic fixtures. Use these cues to infer the most appropriate scene or environment name and output just that label."
+    long_3: "Even if multiple scene categories might seem plausible, choose the single scene type that best captures the overall setting. Consider clues such as horizon lines, ceiling and wall shapes, furniture, vegetation, and other contextual hints, then provide a concise scene category name."
+    distractor_1: "Weather conditions, time of day, and camera lenses can alter the appearance of the same place dramatically. Ignoring those variations, what is the underlying scene or environment category represented in this image?"
+    distractor_2: "Some environments include both natural and man made elements, like parks with buildings in the background. Taking the entire composition into account, name the scene type that best describes this photo."
+    distractor_3: "Crowded scenes with people and objects can make it tempting to focus on individuals rather than the setting. Instead, think like a scene classifier and state the scene category for this image."
+
+Place365:
+  query:
+    rephrased_1: "Which type of place or location is depicted in the image?"
+    rephrased_2: "Identify the location category shown in this picture."
+    rephrased_3: "Describe the kind of place represented in the photo."
+    short_1: "Place type"
+    short_2: "Location type"
+    short_3: "Place label"
+    long_1: "This image comes from a large scale place recognition setting such as Places365. Consider architecture, layout, objects, and context to infer what kind of place it is (for example airport terminal, library, street). Answer with a short place or location category name only."
+    long_2: "Ignore any fine grained object identities and instead focus on what sort of place the photo was taken in, whether public or private, indoor or outdoor, urban or rural. Use these cues to select the most appropriate place category and state it briefly."
+    long_3: "Even if the picture could fit several related location types, select the single place label that best captures how this scene would typically be described. Base your choice on stable structural features like building style, room layout, and surrounding environment."
+    distractor_1: "Urban planning, zoning, and cultural practices all influence how places are designed and used, which is why locations in different cities can still share the same category. Focusing only on what you see here, what place type does this image show?"
+    distractor_2: "Many public spaces incorporate signage, seating, and lighting in characteristic ways. Using these and other clues, state the location category that best matches the photo."
+    distractor_3: "Transportation infrastructure, parks, and residential areas can sometimes overlap in one view. Considering the dominant impression of the scene, what kind of place is depicted?"
+
+ImageNet-A:
+  query:
+    rephrased_1: "Classify the main object shown in this adversarially hard image."
+    rephrased_2: "What is the primary object category in this challenging picture?"
+    rephrased_3: "Identify the object class depicted in this difficult ImageNet style image."
+    short_1: "Hard object"
+    short_2: "Adversarial class"
+    short_3: "Main object"
+    long_1: "This image is similar to the adversarially filtered ImageNet A dataset, where objects are often presented under tricky conditions. Despite unusual viewpoints, clutter, or occlusions, infer the intended ImageNet style object category and answer with only that class name."
+    long_2: "Assume there is a single ground truth object label, even though the photo is deliberately hard for standard models. Look past spurious textures or confusing backgrounds and reason about shape and structure to determine the correct object class. Output just the object label."
+    long_3: "Treat this as a robustness test: minor distortions, crops, or background distractors should not change your judgment of the underlying object identity. Carefully analyze the image and provide the single most appropriate object category name."
+    distractor_1: "Robustness benchmarks like ImageNet A collect images that fool many classifiers while remaining easy for humans. Ignoring how a weak model might react, state the true object class shown here."
+    distractor_2: "Motion blur, unusual framing, or camouflage can hide key features at first glance. Take a moment to look beyond these artifacts and name the main object category in the picture."
+    distractor_3: "Adversarial selection often exploits texture bias or background bias. Focus instead on global shape and semantic meaning to identify the intended object class."
+
+ImageNet-R:
+  query:
+    rephrased_1: "Determine the object class represented in this stylized or artistic image."
+    rephrased_2: "What real world object does this rendition depict?"
+    rephrased_3: "Identify the underlying object category shown in this stylized picture."
+    short_1: "Stylized object"
+    short_2: "Rendition class"
+    short_3: "Object label"
+    long_1: "This image resembles examples from the ImageNet R rendition dataset, where objects appear as drawings, sculptures, cartoons, or other artistic forms. Ignore the artistic medium and infer the real world object category that is being depicted. Respond with only the object class name."
+    long_2: "Even though colors, textures, and proportions may be exaggerated or simplified, focus on the essential structure and semantics of the depicted item. Map that to the most suitable ImageNet style object label and provide that label as your answer."
+    long_3: "Consider that the same object could be rendered in many different styles but still share key visual cues such as outline, parts, and context. Use those stable features to determine the underlying object class in this rendition and output the class name only."
+    distractor_1: "Artistic renditions like cartoons, paintings, or graffiti can greatly distort appearance while preserving identity. Ignoring the drawing style or material, what real world object is this image portraying?"
+    distractor_2: "Non realistic color schemes, such as a blue banana or a red dog, can mislead color based recognition. Rely mainly on shape and structure and state the object category depicted."
+    distractor_3: "Some abstract artworks border on being unrecognizable, but ImageNet R still uses them to test robustness. Treat this picture as such a test and identify the intended object class."
+
+ObjectNet:
+  query:
+    rephrased_1: "Identify the object category shown in this image captured under unusual conditions."
+    rephrased_2: "What everyday object is depicted here, despite the odd viewpoint or context?"
+    rephrased_3: "Classify the main object in this atypical ObjectNet style photo."
+    short_1: "Object category"
+    short_2: "Atypical object"
+    short_3: "Main object"
+    long_1: "This photo resembles images from ObjectNet, where household objects are photographed in unusual poses, backgrounds, and camera angles. Ignore the atypical context and focus on object shape and parts to decide which object category it belongs to. Answer with only the object name."
+    long_2: "You may see the object rotated, partially cropped, or placed in a surprising environment. Despite these shifts, your goal is to recognize the same category you would assign under normal conditions. Provide a single everyday object class as your response."
+    long_3: "Treat this as a test of viewpoint and background invariance. Carefully reason about what the item would look like from more familiar angles and settings, then state the corresponding object category in a few words."
+    distractor_1: "Datasets like ObjectNet deliberately break common dataset biases by changing backgrounds and supports. Ignoring these distribution changes, what is the underlying object shown in this image?"
+    distractor_2: "Objects placed on different surfaces or in strange locations can still be recognized if you focus on their intrinsic geometry. Do that here and provide the object category."
+    distractor_3: "Unusual presentations, such as upside down placement or odd crops, can confuse automatic systems. Think about how the item would appear in a typical catalog photo and name the object."
+
+# RET t -> i
+VisDial:
+  query:
+    rephrased_1: "Using the entire dialogue, choose the image that best matches the conversation."
+    rephrased_2: "From the dialogue context, determine which image it is talking about."
+    rephrased_3: "Select the image that most consistently fits the questions and answers in the dialogue."
+    short_1: "Dialogue image"
+    short_2: "Match dialogue"
+    short_3: "Pick image"
+    long_1: "You are given a multi turn visual dialogue similar to those in VisDial. Read all questions and answers carefully, track references across turns, and then select the single image that best matches the conversation. Base your decision only on what the dialogue implies about the image content."
+    long_2: "Resolve pronouns, follow-up questions, and clarifications across the entire dialogue history to understand what scene is being discussed. Then pick the image whose contents align most closely with that inferred scene. Your output should be the chosen image index or id, not an explanation."
+    long_3: "Some turns may mention objects, colors, or actions that rule out certain candidates, while others may be more ambiguous. Combine all these clues to identify the unique image that satisfies the most constraints from the conversation and select that image."
+    distractor_1: "In real chats, people often change topics or refer back to earlier details in subtle ways. Despite any small inconsistencies, use the overall dialogue to decide which single image it is describing and select that one."
+    distractor_2: "Certain questions in the dialogue might be answerable from multiple images in isolation, but the entire sequence usually narrows things down. Consider the full context and choose the most appropriate image."
+    distractor_3: "Some candidate images may share similar objects or colors, but differ in layout or secondary details. Use those finer details implied in the dialogue to pick the best matching image."
+
+MSCOCO_t2i:
+  query:
+    rephrased_1: "Given the text caption, select the image that it describes."
+    rephrased_2: "Choose the image whose visual content best matches the provided description."
+    rephrased_3: "Identify the image that the given caption is referring to."
+    short_1: "Caption match"
+    short_2: "Text to image"
+    short_3: "Select match"
+    long_1: "Treat this as a text to image retrieval task on MSCOCO style captions. Read the caption carefully, including objects, attributes, and relationships, and select the image that most faithfully depicts all of these details. Return only the index or id of the chosen image."
+    long_2: "Compare each candidate image against the caption, checking for agreement on the number and type of objects, their actions, spatial relations, and any mentioned colors or environments. Choose the single image that best satisfies the description as a whole."
+    long_3: "If several images partially match the caption, prefer the one that captures the full scene described rather than just a subset of details. Consider both exact matches and reasonable paraphrases of the caption when making your selection and output the best matching image."
+    distractor_1: "Short captions may omit some obvious visual details, while still uniquely identifying a scene. Using the caption as is, without adding new assumptions, pick the image that fits it best."
+    distractor_2: "Different images might share the same main object but differ in background, number of items, or actions. Pay attention to these fine grained cues in the caption when selecting the image."
+    distractor_3: "MSCOCO captions often mention only a few salient objects. Even if other objects appear in an image, focus on the ones described and choose the image that aligns most closely."
+
+VisualNews_t2i:
+  query:
+    rephrased_1: "Given the news caption, choose the image that illustrates it best."
+    rephrased_2: "Select the image whose content most closely matches the provided news text."
+    rephrased_3: "Identify the image that the news description is meant to accompany."
+    short_1: "News caption match"
+    short_2: "News text image"
+    short_3: "Select news image"
+    long_1: "You are performing text to image retrieval for multimodal news, as in VisualNews. Read the news caption or brief text carefully and select the image that would most plausibly be used with that story on a news site. Answer with the chosen image index or id only."
+    long_2: "Consider entities, locations, events, and atmosphere described in the news text, such as protests, sports games, financial reports, or natural disasters. Then find the image that depicts the same event or topic in a coherent way and select it."
+    long_3: "Some captions may describe abstract concepts like economic decline using metaphorical imagery, while others are literal. Decide whether the text implies a symbolic or direct illustration and pick the image that fits that role best."
+    distractor_1: "News outlets sometimes reuse generic stock photos that only loosely match the story. Nevertheless, choose the image that a typical editor would most likely pair with the given caption."
+    distractor_2: "Be mindful of time, place, and key actors mentioned in the text. Use those details to distinguish between visually similar images and select the closest match."
+    distractor_3: "Multiple candidate photos may show similar scenes, such as different press conferences or stadium shots. Focus on matching specific cues from the caption when deciding which one to select."
+
+WebQA:
+  query:
+    rephrased_1: "Select the image that best answers the given question."
+    rephrased_2: "Choose the image that is most relevant to the question asked."
+    rephrased_3: "Identify the image that corresponds to the correct answer for the question."
+    short_1: "QA image"
+    short_2: "Answer image"
+    short_3: "Select answer"
+    long_1: "Read the question carefully and imagine what visual evidence would resolve it. Among the candidate images, pick the one that most directly provides an answer to the question. Output only the index or id of the selected image."
+    long_2: "Some images may be tangentially related to the topic of the question but not sufficient to answer it. Prefer the image that clearly supports a specific correct answer, for example by showing the right object, location, or configuration."
+    long_3: "If multiple images seem related, compare how precisely each one addresses the key detail being asked about in the question. Choose the single image that gives the strongest and most unambiguous evidence for the answer."
+    distractor_1: "Questions can sometimes mention broad topics like animals or cities, yet require a specific detail. Focus on that detail when deciding which image answers the question best."
+    distractor_2: "Some images might depict well known entities or landmarks that are close but not exactly what the question refers to. Avoid near misses and select the one that matches the query most accurately."
+    distractor_3: "Even if an image is visually striking or colorful, that alone does not make it the right answer. Ignore aesthetics and choose the image that most clearly satisfies the question."
+
+EDIS:
+  query:
+    rephrased_1: "Select the image that corresponds to the educational description."
+    rephrased_2: "Choose the image that best illustrates the provided educational text."
+    rephrased_3: "Identify the image that matches the educational content described."
+    short_1: "Education image"
+    short_2: "Teaching visual"
+    short_3: "Select illustration"
+    long_1: "You are retrieving educational images for textbook style descriptions, as in EDIS. Read the explanatory text, including concepts, entities, and relationships, and select the image that would serve as the most appropriate visual illustration. Respond with only the chosen image index or id."
+    long_2: "Consider what a teacher or author would likely show next to this passage: a diagram, a photograph of an example, or a conceptual illustration. Among the candidates, choose the image that most directly supports understanding of the described content."
+    long_3: "If the text mentions multiple elements, such as a process with several steps or a structure with labeled parts, prefer images that depict those elements explicitly rather than loosely related themes. Select the best matching image."
+    distractor_1: "Educational resources often try to minimize distraction and emphasize clarity. Taking that into account, pick the image that most clearly conveys the idea in the text."
+    distractor_2: "Some educational texts may reference abstract concepts that are hard to visualize. Choose the relevant image."
+    distractor_3: "Multiple images might seem relevant at first glance. Identify the one that best matches the educational description."
+
+Wiki-SS-NQ:
+  query:
+    rephrased_1: "Select the image that answers the given Wikipedia style question."
+    rephrased_2: "Choose the image that is most relevant to the Wiki question."
+    rephrased_3: "Identify the image that corresponds to the correct answer for this Wiki query."
+    short_1: "Wiki image"
+    short_2: "Entity image"
+    short_3: "Select Wiki match"
+    long_1: "Treat the question as coming from a Wikipedia based QA dataset. Infer which entity, concept, or event is being asked about, then pick the image that depicts that correct answer. Output only the index or id of the selected image."
+    long_2: "Some questions may be about people, locations, flags, or artifacts. Determine the likely Wikipedia page that would answer the question and then choose the image that would appear on that page or best represent that topic."
+    long_3: "Disambiguate between entities with similar names or types by paying attention to specific clues in the question, such as nationality, time period, or field of work. Select the image that matches the intended answer most precisely."
+    distractor_1: "Many Wikipedia pages share similar looking images, such as different bridges or stadiums. Use details in the question to avoid confusion and pick the correct one."
+    distractor_2: "If the question refers to a particular person or character, check for gender, clothing, or context hints that distinguish them from others. Then choose the matching image."
+    distractor_3: "Questions about geographic entities can involve cities, countries, or landmarks. Identify which level of entity is targeted and select the image accordingly."
+
+CIRR:
+  query:
+    rephrased_1: "Using the input image and the text edit, select the target image that matches the described changes."
+    rephrased_2: "Choose the image that best reflects the instruction applied to the reference image."
+    rephrased_3: "Identify the target image that corresponds to the reference image after following the given instruction."
+    short_1: "Composed match"
+    short_2: "Edited image"
+    short_3: "Target choice"
+    long_1: "This is a composed image retrieval task like CIRR. First understand the reference image, then interpret the natural language instruction as a modification or refinement of that image. Among the candidates, select the target image that best matches the reference image after applying the described change."
+    long_2: "Pay attention to how the instruction alters attributes such as color, style, pose, background, or number of objects relative to the reference image. Use these relative differences, not absolute descriptions alone, to pick the correct target image."
+    long_3: "If several candidates resemble the reference image, choose the one whose differences from the reference most closely implement the instruction. Your answer should be the single target image index or id that fits the composed query best."
+    distractor_1: "Some candidate images may match the instruction in isolation but not maintain similarity to the reference image. Remember that the target must satisfy both the base image and the edit when you select it."
+    distractor_2: "Instructions can refer to subtle changes, like making an object slightly larger or changing only one color. Use fine grained comparisons between candidates and the reference to choose the best match."
+    distractor_3: "Even when multiple images share similar objects, they may differ in layout or relation to the reference image. Focus on relative differences described in the text when deciding which one to pick."
+
+NIGHTS:
+  query:
+    rephrased_1: "Given the input image and instruction, select the image that is most similar in the way the instruction specifies."
+    rephrased_2: "Choose the target image that matches how the instruction relates to the reference image."
+    rephrased_3: "Identify the image whose relationship to the reference image satisfies the provided instruction."
+    short_1: "Similarity match"
+    short_2: "Instruction match"
+    short_3: "Target image"
+    long_1: "Interpret the reference image and the accompanying instruction, which may describe semantic or stylistic similarity. Then select the target image whose overall content and style are most consistent with what the instruction asks for relative to the reference image."
+    long_2: "NIGHTS style benchmarks emphasize perceptual similarity in terms of layout, pose, and semantics. Use the instruction to guide which aspects of similarity or difference matter most, and choose the target image that fits those criteria best."
+    long_3: "If several images appear similar to the reference, use the instruction to decide which dimensions of similarity to prioritize, such as viewpoint, background, or object configuration. Output the index or id of the best matching target."
+    distractor_1: "Some target images may share superficial colors or textures but differ in structure or semantics. Follow the instruction to decide which similarity is actually important and select accordingly."
+    distractor_2: "The instruction may implicitly tell you what to ignore, such as lighting changes, while focusing on layout or content. Use that to narrow down the best target image."
+    distractor_3: "Human similarity judgments often care about high level meaning rather than exact pixel match. Think in those terms when choosing the target image that fits the instruction."
+
+OVEN:
+  query:
+    rephrased_1: "Using the input image and instruction, select the target image that best matches the described entity."
+    rephrased_2: "Choose the image whose visual entity corresponds to the instruction given the reference image."
+    rephrased_3: "Identify the target image that reflects the referenced entity after applying the instruction to the input image."
+    short_1: "Entity match"
+    short_2: "Target entity"
+    short_3: "Select target"
+    long_1: "This task is related to open domain visual entity recognition, as in OVEN. Understand the reference image and instruction, infer the intended visual entity or change, and then select the target image that depicts the correct entity most consistently with that instruction."
+    long_2: "Consider how the instruction may narrow or shift the entity described in the reference image, for example by specifying a different instance, state, or context. Among the candidates, choose the one whose main entity aligns best with that described transformation."
+    long_3: "Even if multiple targets show similar objects, select the one whose entity and context match both the original image and the instruction. Output only the index or id of the target image you judge correct."
+    distractor_1: "Different images may show entities in various backgrounds or poses, but the instruction often fixes which variant is intended. Use that to disambiguate and pick the right target image."
+    distractor_2: "Some candidates may depict related but not identical entities, such as a different species, model, or landmark. Carefully match the entity described by the instruction before selecting."
+    distractor_3: "Open domain settings involve many possible entities, so near misses are common. Prefer precision: choose the target that most exactly corresponds to the intended entity."
+    distractor_4: "Think of how this image and instruction would map to a single Wikipedia page representing the entity. Select the target image that you would place on that page."
+
+FashionIQ:
+  query:
+    rephrased_1: "Using the input clothing image and text edit, select the target image that matches the requested changes in style or attributes."
+    rephrased_2: "Choose the garment image that best reflects the described modification of the reference item."
+    rephrased_3: "Identify the clothing image corresponding to the reference item after applying the fashion instruction."
+    short_1: "Fashion match"
+    short_2: "Edited outfit"
+    short_3: "Target garment"
+    long_1: "This is a fashion retrieval task like FashionIQ. Examine the reference garment and the text instruction, which modifies attributes such as color, length, pattern, or fit. Then select the target image that best represents the reference clothing item after those changes."
+    long_2: "Prioritize relative differences: how the target should differ from the reference according to the instruction, not just absolute style. Compare all candidate garments and pick the one whose attributes most closely satisfy the described edit."
+    long_3: "When several items look similar, check whether details like neckline, sleeve length, print type, or silhouette agree with the instruction. Choose the single target image that provides the best match and output its index or id."
+    distractor_1: "Fashion descriptions often mention only a subset of attributes, assuming the rest remain similar. Keep the unchanged aspects from the reference garment in mind while applying the specified changes to choose the target."
+    distractor_2: "Some candidates may partially satisfy the instruction, such as the right color but wrong length. Favor the image that best matches the combination of all described attributes."
+    distractor_3: "Small differences in cut or pattern can be important in fashion retrieval. Inspect those carefully when deciding which garment image to select."
+
+MSCOCO:
+  query:
+    rephrased_1: "List all object categories visible in the MSCOCO style image."
+    rephrased_2: "Which objects can you identify in this scene?"
+    rephrased_3: "Name every distinct object class present in the picture."
+    short_1: "MSCOCO objects"
+    short_2: "Object set"
+    short_3: "List classes"
+    long_1: "Treat this as a multi object labeling task on an MSCOCO style image. Scan the entire scene and identify each object category that appears, such as person, bicycle, dog, or bus. Output a comma separated list of object class names without extra text."
+    long_2: "Look for both large and small items, including those in the background, and use context to recognize partially occluded objects. Your goal is to produce the full set of MSCOCO object categories present in the image, not their counts or locations."
+    long_3: "If you are uncertain between similar categories, choose the one that best fits the shape and context. Provide a concise list of all object labels you believe appear in the scene."
+    distractor_1: "MSCOCO images often contain many more objects than are mentioned in their captions, which can make exhaustive labeling challenging. Regardless, name all object categories you can see here."
+    distractor_2: "Some objects, like signs or backpacks, can be easy to miss at the edges of the frame. Carefully inspect the entire image and list each distinct object class."
+    distractor_3: "Overlapping objects and crowded scenes may tempt you to focus only on the most salient items. Instead, aim to recover the complete set of object categories present."
+
+RefCOCO:
+  query:
+    rephrased_1: "Identify the specific object in the image that the referring expression points to."
+    rephrased_2: "Based on the referring phrase, which object in the picture is being described?"
+    rephrased_3: "Determine which object the text reference is intended to pick out."
+    short_1: "Referred object"
+    short_2: "Target referent"
+    short_3: "Pointed object"
+    long_1: "You are given an image and a natural language referring expression, as in RefCOCO. Use the phrase to locate the single object it denotes, considering attributes, spatial relations, and comparisons to other objects. Identify the target object category or region described."
+    long_2: "Pay attention to phrases like \"on the left\", \"in the back\", \"wearing a hat\", or \"the smaller one\" that distinguish the referent from similar objects. Use these cues to decide which object is meant and state its category or a brief description."
+    long_3: "If multiple objects share the same class, rely on the relational and attribute information in the expression to disambiguate. Your answer should clearly indicate which object is being referred to, for example by its category and distinguishing property."
+    distractor_1: "Referring expressions often omit obvious details and highlight only what is needed to distinguish one object from others. Focus on those highlighted properties when choosing the referent."
+    distractor_2: "Words like \"closest\", \"middle\", or \"rightmost\" can be easy to overlook but are crucial. Use such spatial terms to resolve which object the expression targets."
+    distractor_3: "Even if several objects partially fit the description, select the one that satisfies all specified attributes and relations most completely."
+
+RefCOCO-Matching:
+  query:
+    rephrased_1: "From the image, find the object that matches the referring expression."
+    rephrased_2: "Using the referring phrase, determine which object in the image is targeted."
+    rephrased_3: "Identify the object that best corresponds to the given reference text."
+    short_1: "Match referent"
+    short_2: "RefCOCO object"
+    short_3: "Target region"
+    long_1: "As in referring expression matching tasks, combine the image and text to identify the intended object. Use both appearance attributes and spatial relations described in the phrase to choose the correct object among all candidates."
+    long_2: "Some phrases compare objects, such as \"the taller man\" or \"the red cup next to the plate\". Interpret these comparisons carefully to distinguish the referent from other similar items and state which object is meant."
+    long_3: "When the expression is ambiguous, prefer the object that satisfies more of the constraints mentioned in the text. Provide a clear indication of the chosen object, usually by its category plus a distinguishing description."
+    distractor_1: "Referring expressions may combine color, size, and position information in compact ways. Unpack all of these hints before deciding which object they describe."
+    distractor_2: "Be cautious not to confuse absolute and relative positions, such as \"left side of the image\" versus \"left of the woman\". Use the correct frame of reference for the phrase."
+    distractor_3: "If two objects are nearly identical, look for subtle cues in the wording, like \"closer\" or \"further back\". Use those cues to resolve the match."
+
+Visual7W-Pointing:
+  query:
+    rephrased_1: "Identify the specific object in the image that the question is pointing to."
+    rephrased_2: "Based on the question and pointing cue, which object is being referred to?"
+    rephrased_3: "Determine which object in the picture corresponds to the pointed target."
+    short_1: "Pointed object"
+    short_2: "Target pointer"
+    short_3: "Referent object"
+    long_1: "In Visual7W pointing style tasks, a question and a pointer indicate a particular object in the image. Use any textual description plus the pointing cue to identify that object and describe its category or role in a few words."
+    long_2: "Treat the pointer as highlighting a region and the question as providing semantic context. Combine both to decide what the pointed object is (for example \"dog\", \"chair\", or \"traffic light\") and state that label."
+    long_3: "If the pointer is near multiple items, use the question to clarify which one is intended. Your answer should be the object category or a short noun phrase naming the referent."
+    distractor_1: "Pointing annotations may not land exactly at the center of an object. Interpret the region broadly and then refine using the question to pick the correct object."
+    distractor_2: "Some questions might ask about parts of objects, like \"What is he holding?\". In such cases, identify the pointed object itself, not the whole person or scene."
+    distractor_3: "Even if several objects are close together, the pointer usually selects only one. Pay attention to both the pointer location and the wording of the question to avoid confusion."
+
+OK-VQA:
+  query:
+    rephrased_1: "Answer the question using information from the image plus your general world knowledge."
+    rephrased_2: "Given the picture and what you know about the world, what is the answer to the question?"
+    rephrased_3: "Combine visual cues and common sense to provide the answer to the question based on the image."
+    short_1: "Answer using knowledge"
+    short_2: "Visual + commonsense"
+    short_3: "OK-VQA answer"
+    long_1: "This is an OK-VQA style question that may require both visual understanding and external knowledge. First interpret the image, then apply relevant common sense or factual knowledge to infer the correct answer. Provide a concise answer phrase, not a full sentence."
+    long_2: "Do not limit yourself to what is literally written in the image; instead, reason about what the depicted objects are, how they are used, and what they imply. Use that reasoning to answer the question in a few words."
+    long_3: "If multiple answers seem plausible, choose the one that best aligns with both the visual evidence and widely accepted real world facts. Respond with the final answer only, without explaining your reasoning."
+    distractor_1: "Some questions may appear answerable from text alone, but the image can rule out certain options. Use both the picture and your background knowledge when deciding on an answer."
+    distractor_2: "OK-VQA often asks about functions, affordances, or typical properties, such as what something is used for. Think about those relationships when forming your response."
+    distractor_3: "Avoid hallucinating details that contradict the image. Let the picture constrain which world knowledge is applicable, then answer briefly."
+
+A-OKVQA:
+  query:
+    rephrased_1: "Answer the question using both the image and your external knowledge."
+    rephrased_2: "Given the image and your understanding of the world, what is the correct answer?"
+    rephrased_3: "Use visual evidence plus general knowledge to respond to the question."
+    short_1: "Answer with knowledge"
+    short_2: "Image + facts"
+    short_3: "A-OKVQA answer"
+    long_1: "This is an advanced OK-VQA style question that may have multiple answer options. Carefully analyze the image, recall relevant background knowledge, and then choose the answer that best fits both. Output only the final answer, not the option letter unless explicitly requested."
+    long_2: "Consider how objects, scenes, and actions shown in the picture relate to broader concepts or facts, such as typical uses, causes, or categories. Use that to resolve the question in a short phrase."
+    long_3: "If the question is multiple choice, mentally compare each option against the visual evidence and your knowledge, then return just the most appropriate answer content. If it is open ended, reply with a brief phrase capturing the correct answer."
+    distractor_1: "Some options may sound plausible in general but conflict with the specific scene shown. Let the image rule out such distractors before answering."
+    distractor_2: "Questions might require chaining several pieces of knowledge, such as \"what tool is used\" or \"what event is likely\". Perform that reasoning before giving your final answer."
+    distractor_3: "Even if you are uncertain, avoid guessing randomly. Instead, eliminate clearly incompatible answers using the image and pick the best remaining candidate."
+
+DocVQA:
+  query:
+    rephrased_1: "Answer the question by reading and understanding the document image."
+    rephrased_2: "Using the text and layout in the document picture, what is the answer to the question?"
+    rephrased_3: "Extract and infer the answer to the question from the document image."
+    short_1: "Document answer"
+    short_2: "Read and answer"
+    short_3: "DocVQA response"
+    long_1: "Treat the image as a scanned document that may contain printed or handwritten text, tables, or forms. Locate the relevant part of the document and read it to answer the question. Provide only the requested value or phrase."
+    long_2: "Preserve any important formatting such as numbers, dates, or names when giving your answer, but do not include extra context beyond what the question asks for."
+    long_3: "If the answer is implied by combining information from several parts of the document, integrate those pieces logically before responding. Answer succinctly using text copied or paraphrased from the document."
+    distractor_1: "Document images may contain decorative or irrelevant text. Ignore such content and focus only on sections that help resolve the question."
+    distractor_2: "Tables, forms, and key value pairs often encode answers compactly. Identify the correct cell or field before reading off your answer."
+    distractor_3: "Be careful with visually similar entries, such as multiple dates or amounts. Make sure you choose the one that matches the question’s description."
+
+InfographicsVQA:
+  query:
+    rephrased_1: "Answer the question by interpreting the infographic image."
+    rephrased_2: "Using the visual design and text in the infographic, what is the answer?"
+    rephrased_3: "Read the infographic and provide the answer to the question."
+    short_1: "Infographic answer"
+    short_2: "Chart info"
+    short_3: "VQA response"
+    long_1: "The image is an infographic that may combine text, icons, and charts. Identify the relevant section, interpret any numbers or labels, and then answer the question in a brief phrase or value."
+    long_2: "Pay attention to legends, color codings, and annotations that explain what each visual element means. Use that information to compute or retrieve the answer requested."
+    long_3: "If the question requires comparing values or spotting trends in the infographic, perform the necessary reasoning before responding. Give only the final answer, not the intermediate steps."
+    distractor_1: "Infographics often contain extra facts and decorative icons that do not affect the question. Ignore irrelevant details and focus on the specific part needed to answer."
+    distractor_2: "Check axes, units, and labels carefully so you do not misread the underlying data. Then state the answer clearly."
+    distractor_3: "When several similar values are shown, double check which one the question refers to (for example, a particular year or category) before answering."
+
+ChartQA:
+  query:
+    rephrased_1: "Answer the question by reading the data from the chart image."
+    rephrased_2: "Using the chart’s axes, labels, and values, what is the answer to the question?"
+    rephrased_3: "Interpret the chart and provide the answer requested."
+    short_1: "Chart answer"
+    short_2: "Read chart"
+    short_3: "Data response"
+    long_1: "The image is a data chart (such as a bar, line, or pie chart). Identify the relevant series and categories, read the numerical or categorical values, and then answer the question precisely."
+    long_2: "Check titles, legends, and units to understand what each axis or color stands for. Use this understanding to retrieve or compute the correct value or comparison."
+    long_3: "If the question asks for a difference, ratio, maximum, minimum, or trend, carry out the necessary reasoning using the chart’s values before answering. Respond succinctly with the final result."
+    distractor_1: "Some chart elements, like gridlines or decorative shading, are not meaningful for the answer. Ignore them and focus on the actual data encodings."
+    distractor_2: "Be careful to distinguish between similar colors or patterns in the legend. Make sure you are reading the correct series for your answer."
+    distractor_3: "Approximate values if the chart is not perfectly precise, but keep your answer consistent with what a careful human reading would conclude."
+
+Visual7W:
+  query:
+    rephrased_1: "Answer the natural language question using the content of the image."
+    rephrased_2: "Given the picture, what is the correct response to the question?"
+    rephrased_3: "Use the visual scene to provide the answer to the question."
+    short_1: "Image answer"
+    short_2: "Visual QA"
+    short_3: "7W response"
+    long_1: "Treat this as a standard visual question answering task. Look at the image, understand the question type (who, what, where, when, why, how), and then respond with a short phrase that correctly answers it."
+    long_2: "Rely on visual evidence first, using object identities, attributes, and relations to resolve the question. Do not describe the whole image; instead, provide only the information requested."
+    long_3: "If the question could be answered in multiple ways, select the answer that best matches what a human annotator would write for this specific image. Keep your answer brief and focused."
+    distractor_1: "Some questions might mention objects that do not actually appear in the image as a trick. Verify what is truly present before answering."
+    distractor_2: "Avoid giving generic answers that ignore the image, such as common sense defaults, unless they clearly fit what is shown."
+    distractor_3: "Use spatial and attribute cues (like left, right, red, large) when the question depends on them, and reflect those distinctions in your answer."
+
+ScienceQA:
+  query:
+    rephrased_1: "Answer the science question using both the image and relevant scientific knowledge."
+    rephrased_2: "Given the picture and basic science concepts, what is the answer to the question?"
+    rephrased_3: "Combine visual information with scientific reasoning to respond to the question."
+    short_1: "Science answer"
+    short_2: "Image + science"
+    short_3: "SciQA response"
+    long_1: "This is a science oriented VQA task. Interpret the diagram, photo, or chart, recall appropriate scientific principles (for example physics, biology, or earth science), and then answer the question in a short phrase."
+    long_2: "Do not merely describe what you see; explain or infer the relevant scientific concept and give the result that the question asks for, such as a process name, property, or outcome."
+    long_3: "If the question is multiple choice, mentally evaluate each option against both the image and the underlying science, then output only the correct choice content. For open ended questions, answer succinctly but precisely."
+    distractor_1: "Some distractor options may sound scientifically plausible but conflict with the visual evidence. Use both sources of information before deciding."
+    distractor_2: "Diagrams may use conventions like arrows or labels to indicate directions or relationships. Be sure to interpret these correctly before answering."
+    distractor_3: "If you need to perform a simple scientific calculation or logical chain, do so internally and provide only the final answer."
+
+VizWiz:
+  query:
+    rephrased_1: "Answer the user's question using only the information available in the image."
+    rephrased_2: "Given the picture, what is the appropriate answer to the question asked?"
+    rephrased_3: "Use the visual content to respond as helpfully as possible to the question."
+    short_1: "VizWiz answer"
+    short_2: "Assistive QA"
+    short_3: "Image response"
+    long_1: "VizWiz questions often come from blind or low vision users seeking practical information. Examine the image carefully and answer the question as directly and helpfully as you can in a short phrase or sentence."
+    long_2: "If the answer cannot be determined from the image (for example due to blur, occlusion, or missing content), honestly state that it is not possible to tell, rather than guessing."
+    long_3: "Focus on being clear and concise, providing exactly what the user needs, such as text on labels, colors of items, or positions of objects, based on what is visible."
+    distractor_1: "Images in VizWiz can be low quality or poorly framed. Do your best with what you can see, but do not fabricate details that are not visible."
+    distractor_2: "Remember that the user may rely on your answer to act in the real world. Prioritize accuracy and safety over speculation."
+    distractor_3: "If multiple interpretations are possible, mention that uncertainty briefly or choose the safest reasonable interpretation."
+
+GQA:
+  query:
+    rephrased_1: "Answer the compositional question by reasoning over the image."
+    rephrased_2: "Use the visual scene and logical reasoning to respond to the question."
+    rephrased_3: "Given the picture, work through the relationships it shows to answer the question."
+    short_1: "GQA answer"
+    short_2: "Reasoning QA"
+    short_3: "Scene logic"
+    long_1: "GQA questions often require multi step reasoning, such as combining object attributes, spatial relations, and counts. Carefully analyze the scene and logically derive the answer, then state it succinctly."
+    long_2: "Break the question into smaller sub questions in your mind if needed (for example, identify an object, then check its color or location). Use the results to form your final answer."
+    long_3: "Avoid shortcuts based on language priors alone; ensure that your answer is supported by what is actually visible in the image. Respond with a brief phrase or value."
+    distractor_1: "Some questions are designed to trap models that rely on common patterns rather than visual evidence. Verify each step of your reasoning against the picture."
+    distractor_2: "Relations like \"left of\", \"behind\", or \"closest to\" can be crucial. Use spatial understanding to resolve them accurately."
+    distractor_3: "Counting tasks require care not to double count or miss partially occluded objects. Take a moment to check before answering."
+
+TextVQA:
+  query:
+    rephrased_1: "Answer the question by reading the text that appears in the image."
+    rephrased_2: "Using the visible text in the picture, what is the answer to the question?"
+    rephrased_3: "Combine the scene with any readable text to provide the answer."
+    short_1: "Read text answer"
+    short_2: "OCR QA"
+    short_3: "TextVQA response"
+    long_1: "This task requires both visual understanding and text recognition. Locate and read the relevant text in the image, then use it to answer the question. Copy words, numbers, or phrases as needed for an accurate response."
+    long_2: "Be careful with similar looking characters (such as 0 and O or 1 and l) and try to reproduce the text exactly when that matters to the answer, for example in names or codes."
+    long_3: "If the question refers to a sign, label, menu, or document within the image, focus on that region and extract the necessary information. Respond concisely with the requested text or value."
+    distractor_1: "Not all text in the image will be relevant. Filter out unrelated words and focus only on the portions that help answer the question."
+    distractor_2: "Some text may be partially occluded or blurred. Use context to infer missing characters when reasonable, but avoid overconfident guesses."
+    distractor_3: "If the required text simply is not visible, state that it cannot be determined from the image instead of inventing an answer."

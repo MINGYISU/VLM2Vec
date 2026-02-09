@@ -1,72 +1,319 @@
 ViDoRe_arxivqa:
   qry:
-    rephrased_1: 
-    rephrased_2:
-    rephrased_3:
-    short_1:
-    short_2:
-    short_3:
-    long_1:
-    long_2:
-    long_3:
-    distractor_1:
-    distractor_2:
-    distractor_3:
-  tqt:
+    rephrased_1: "Using the content of the arXiv paper page, what is the correct answer to the question?"
+    rephrased_2: "Read the scientific article page and provide the answer to the given question."
+    rephrased_3: "From the information on this arXiv document page, determine the answer to the question."
+    short_1: "Answer from paper"
+    short_2: "ArXiv page answer"
+    short_3: "Scientific QA"
+    long_1: "You are shown a page from a scientific article (similar to an arXiv preprint). Carefully read the text, formulas, figures, and captions on this page and then answer the question using only the information that appears here. Provide a concise answer phrase."
+    long_2: "Treat the image as a single page of a research paper with dense technical content. Identify the region that is relevant to the question—such as the abstract, body text, equations, or figure descriptions—and extract or infer the answer directly from that content."
+    long_3: "If multiple sections on the page appear related, integrate the information logically before answering. Do not rely on external knowledge beyond what is shown on the page; base your response strictly on the scientific document image."
+    distractor_1: "Scientific papers often contain background or related work that is not needed to answer a specific question. Ignore irrelevant sections and use only the parts of the page that directly support your answer."
+    distractor_2: "Equations, symbols, and technical terminology on arXiv can be visually dense. Focus on the portions that the question targets, such as a definition, result, or parameter value, and answer based on those."
+    distractor_3: "Some questions may be answerable from a figure, table, or caption rather than the main text. Check all components of the page before deciding where the answer comes from."
+  tqt: "Answer the question using only the information visible on the arXiv paper page."
+
 ViDoRe_docvqa:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the content of the document page."
+    rephrased_2: "Based on the text and layout in the document image, what is the answer?"
+    rephrased_3: "Read the document page and provide the answer to the question."
+    short_1: "Document QA"
+    short_2: "Answer from doc"
+    short_3: "Page answer"
+    long_1: "You are given an image of a document page, which may contain paragraphs, headers, lists, and other layout elements. Locate the parts of the page relevant to the question and use them to derive a precise answer."
+    long_2: "Treat the image as a scanned or rendered document. Read the printed or handwritten text carefully, taking into account the structure (titles, sections, bullet points, etc.), and respond with only the information required by the question."
+    long_3: "If the answer requires combining information from multiple parts of the page, integrate those pieces logically before answering. Do not include extra context or explanation, just the answer itself."
+    distractor_1: "Documents often contain decorative or boilerplate text such as headers, footers, or page numbers. Ignore such elements unless the question explicitly refers to them."
+    distractor_2: "Some visually prominent text, like large headings, may not be relevant to the question. Focus instead on the specific section that addresses what is being asked."
+    distractor_3: "Be careful not to confuse similar fields or repeated values (such as multiple dates or names). Choose the one that best matches the description in the question."
+  tqt: "Use the given document image to answer the question as accurately and concisely as possible."
+
 ViDoRe_infovqa:
   qry:
-  tqt:
+    rephrased_1: "Answer the question by interpreting the information in the infographic."
+    rephrased_2: "Using the charts, icons, and text on this infographic, what is the answer to the question?"
+    rephrased_3: "Read the infographic and determine the correct answer to the question."
+    short_1: "Infographic QA"
+    short_2: "Answer from infographic"
+    short_3: "Visual info answer"
+    long_1: "You are shown an infographic that combines text, charts, icons, and other design elements. Identify the part of the infographic that is relevant to the question and use it to compute or retrieve the answer."
+    long_2: "Pay attention to legends, labels, and annotations that explain what each visual element represents. Use those cues to understand the data and relationships needed to answer the question correctly."
+    long_3: "If the question requires comparing values, following a process, or combining multiple pieces of information from the infographic, perform that reasoning step by step and then provide a concise final answer."
+    distractor_1: "Infographics often include extra facts or decorative art that are not needed to answer the question. Ignore visually attractive but irrelevant regions and focus only on the informative parts."
+    distractor_2: "Be careful to match the correct units, categories, and colors in the legend with the corresponding elements in the graphic before deciding on an answer."
+    distractor_3: "Some values may be encoded indirectly (for example via bar length or icon counts). Interpret these encodings correctly rather than guessing from rough impressions."
+  tqt: "Answer the question by carefully reading and interpreting the infographic image."
+
 ViDoRe_tabfquad:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the data in the table shown in the document."
+    rephrased_2: "From the table on this page, determine the correct answer to the question."
+    rephrased_3: "Use the rows and columns of the table to find the answer to the question."
+    short_1: "Table QA"
+    short_2: "Answer from table"
+    short_3: "Tabular answer"
+    long_1: "You are given a document image containing one or more tables. Identify the relevant table and locate the correct row and column entries needed to answer the question exactly."
+    long_2: "Pay careful attention to table headers, units, and cell alignments, and use them to interpret the values correctly. If the question involves a specific category or condition, find the matching row or column before reading off the value."
+    long_3: "If the answer requires aggregating or comparing multiple cells (such as computing a difference or selecting a maximum), perform the necessary reasoning using only the data presented in the table."
+    distractor_1: "Text outside the table may provide context but the numerical or categorical answer usually comes directly from the table cells. Focus on the tabular structure when retrieving the answer."
+    distractor_2: "Similar row or column names can lead to confusion. Double check that you are using the exact label mentioned in the question before extracting a value."
+    distractor_3: "Some tables may be split across multiple sections or include subtotals. Make sure you select the correct figure rather than a subtotal, total, or unrelated cell."
+  tqt: "Use only the data in the table on the page to answer the question accurately."
+
 ViDoRe_tatdqa:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using both the text and tables in the document."
+    rephrased_2: "Combine information from the narrative text and tabular data to answer the question."
+    rephrased_3: "Use the document’s paragraphs and tables together to determine the answer."
+    short_1: "Text+table QA"
+    short_2: "Hybrid doc answer"
+    short_3: "TatDQA response"
+    long_1: "You are given a document that may contain explanatory text and one or more tables. Identify which parts of the text and which table cells are relevant to the question, then integrate them to derive the correct answer."
+    long_2: "Some questions require understanding of how a table is described in the text (for example which subset of rows applies). Use the text to interpret the table correctly, and then retrieve or compute the requested value."
+    long_3: "If solving the question needs multi-step reasoning—such as filtering entries, applying conditions, and then aggregating results—carry out these steps using only the information within the document and answer succinctly."
+    distractor_1: "Tables may include many columns that are irrelevant to the question. Focus only on those dimensions that the text and question highlight."
+    distractor_2: "Narrative text can specify conditions like time ranges or categories that restrict which rows in the table are applicable. Apply these conditions carefully before reading off values."
+    distractor_3: "Avoid using external world knowledge; rely solely on the combination of document text and table data to reach your answer."
+  tqt: "Answer the question by jointly using the document’s text and tables, without relying on outside knowledge."
+
 ViDoRe_shiftproject:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the information in this energy and climate report page."
+    rephrased_2: "From the content of this Shift Project style document, determine the answer to the question."
+    rephrased_3: "Use the text, charts, and tables on this sustainability report page to answer the question."
+    short_1: "Energy report QA"
+    short_2: "ShiftProject answer"
+    short_3: "Climate doc QA"
+    long_1: "You are shown a page from an energy, emissions, or climate-related report. Carefully read the narrative text, figures, and tables on this page and identify the specific information needed to answer the question."
+    long_2: "Pay attention to measurement units, time periods, and geographic scopes mentioned on the page, as they often determine which numeric value or statement is correct. Use these constraints to select or compute the answer."
+    long_3: "If the question involves comparing scenarios, years, or regions, combine the relevant data points from the page and reason about their relationships before providing a concise answer."
+    distractor_1: "Reports of this type often contain high-level commentary as well as precise quantitative data. Use the appropriate level of detail—textual statement or numeric figure—depending on what the question requests."
+    distractor_2: "Charts and tables may present similar metrics with different units or baselines. Verify that you are using the metric that matches the wording of the question."
+    distractor_3: "Do not extrapolate beyond what is shown; answer strictly based on the information available on the report page."
+  tqt: "Use the content of this energy and climate report page to answer the question exactly as written."
+
 ViDoRe_syntheticDocQA_artificial_intelligence:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the synthetic document about artificial intelligence."
+    rephrased_2: "From the AI themed document page, determine the correct answer to the question."
+    rephrased_3: "Use the information provided in this artificial intelligence document to answer the question."
+    short_1: "AI doc QA"
+    short_2: "Synthetic AI answer"
+    short_3: "AI text answer"
+    long_1: "You are presented with a synthetic document discussing artificial intelligence topics such as algorithms, applications, and definitions. Read the relevant sections carefully and extract the information needed to answer the question."
+    long_2: "Even if the text resembles a textbook or report, you should treat it as the sole source of truth for this task. Identify the passage, list, or definition that addresses the question and respond with a concise answer phrase."
+    long_3: "If the question requires combining multiple statements—such as a property and an example—integrate them logically based only on what the document says about artificial intelligence."
+    distractor_1: "Some AI concepts may be familiar from general knowledge, but here you must prioritize the explanation given in the document, even if it simplifies or constrains the topic."
+    distractor_2: "Ignore decorative or filler text that does not contribute to answering the question; focus instead on the portions that explicitly mention the entities or ideas asked about."
+    distractor_3: "Do not invent properties of AI methods that are not supported by the document; base your answer solely on the content shown."
+  tqt: "Answer the question strictly using the information in the artificial intelligence themed synthetic document."
+
 ViDoRe_syntheticDocQA_energy:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the synthetic document about energy topics."
+    rephrased_2: "From this energy-related document page, determine the correct answer to the question."
+    rephrased_3: "Use the information in the energy document to provide the answer."
+    short_1: "Energy doc QA"
+    short_2: "Synthetic energy answer"
+    short_3: "Energy text answer"
+    long_1: "You are given a synthetic document describing concepts, statistics, or policies related to energy. Read the relevant paragraphs, lists, or tables and extract the information that resolves the question."
+    long_2: "Treat the document as self-contained; even if you know more about the topic, rely primarily on what is explicitly stated here when deciding on an answer."
+    long_3: "When multiple parts of the document mention similar quantities or terms, carefully match the wording of the question to the correct passage before answering in a brief phrase."
+    distractor_1: "Energy documents may mention several units and time frames. Make sure you use the ones that the question refers to when selecting or computing an answer."
+    distractor_2: "Do not confuse illustrative examples with final values unless the question clearly asks about the example itself."
+    distractor_3: "Avoid drawing on external domain knowledge; answer only from the content of the synthetic energy document."
+  tqt: "Use only the information in the energy themed synthetic document to answer the question."
+
 ViDoRe_syntheticDocQA_government_reports:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the synthetic government report document."
+    rephrased_2: "From this government-style report page, determine the answer to the question."
+    rephrased_3: "Use the information presented in the governmental report document to answer the question."
+    short_1: "Gov report QA"
+    short_2: "Synthetic gov answer"
+    short_3: "Policy doc QA"
+    long_1: "You are presented with a synthetic government report that may contain policy descriptions, statistics, and summaries. Identify the relevant section and extract the information necessary to answer the question precisely."
+    long_2: "Pay attention to sections, headings, and enumerated items that define terms or list outcomes, as the question may reference them directly or indirectly."
+    long_3: "If numerical data or categories are involved, ensure you are using the correct table or paragraph and answer with the specific figure or phrase requested, without adding commentary."
+    distractor_1: "Government reports often include background narrative that is not directly needed. Focus on the specific part that addresses the subject of the question."
+    distractor_2: "Distinguish between proposed, current, and past policies if the document mentions several; match the question’s timeframe carefully."
+    distractor_3: "Avoid assumptions about how real government reports usually behave; base your reasoning strictly on this synthetic document’s content."
+  tqt: "Answer the question strictly from the content of the synthetic government report page."
+
 ViDoRe_syntheticDocQA_healthcare_industry:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the synthetic document about the healthcare industry."
+    rephrased_2: "From this healthcare-related document page, determine the correct answer to the question."
+    rephrased_3: "Use the information in the healthcare industry document to answer the question."
+    short_1: "Healthcare doc QA"
+    short_2: "Synthetic health answer"
+    short_3: "Industry text QA"
+    long_1: "You are shown a synthetic document that discusses healthcare industry concepts, such as services, stakeholders, and metrics. Read the relevant sections and extract the information needed to answer the question accurately."
+    long_2: "Treat definitions, bullet lists, and descriptive paragraphs as authoritative for this task. Locate the phrase, value, or relationship that directly addresses the question and respond concisely."
+    long_3: "If several entities (for example hospitals, insurers, or patients) are mentioned, carefully track which one the question refers to so that your answer is specific and correct."
+    distractor_1: "Healthcare terminology can overlap (for example between cost, price, and reimbursement). Make sure the term you use in your answer matches the one requested by the question."
+    distractor_2: "Ignore marketing-style or generic language that does not contribute concrete information needed to answer the question."
+    distractor_3: "Do not bring in external medical knowledge; all reasoning should come from the text and data in the synthetic document."
+  tqt: "Use only the information in the healthcare industry themed synthetic document to answer the question."
+
 VisRAG_ArxivQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the retrieved figure or page from the scientific article."
+    rephrased_2: "Based on the retrieved arXiv-style document image, what is the answer to the question?"
+    rephrased_3: "Use the content of the retrieved scientific page or figure to answer the question."
+    short_1: "RAG arXiv QA"
+    short_2: "Retrieved paper answer"
+    short_3: "Arxiv doc QA"
+    long_1: "Assume the image you see is a relevant page or figure retrieved from a scientific article. Read the text, equations, and captions on this image and use them to answer the question as precisely as possible."
+    long_2: "Even if the retrieval context is partial, treat this image as sufficient evidence. Identify the passage or visual element that directly supports the answer and respond with a concise phrase or value."
+    long_3: "If multiple pieces of evidence appear on the page, integrate them logically to reach a consistent answer, relying only on what is visible in the retrieved document image."
+    distractor_1: "Do not speculate about parts of the article that are not shown; base your answer solely on the retrieved page or figure."
+    distractor_2: "Mathematical symbols and variable names may be important. Ensure you interpret them correctly in context before answering."
+    distractor_3: "Ignore irrelevant sections of the retrieved page that do not help answer the question."
+  tqt: "Use the content visible in the retrieved scientific article image to answer the question."
+
 VisRAG_ChartQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question by reading the data from the retrieved chart image."
+    rephrased_2: "Using the chart that has been retrieved, what is the answer to the question?"
+    rephrased_3: "Interpret the retrieved chart and provide the correct answer to the question."
+    short_1: "RAG chart QA"
+    short_2: "Retrieved chart answer"
+    short_3: "Chart data QA"
+    long_1: "Treat the image as a relevant chart selected by retrieval. Examine its axes, legends, and plotted values, then extract or compute the answer requested by the question."
+    long_2: "Verify that you are reading the correct series, category, and units from the chart as they may be crucial to answering correctly. Use these details to support your final answer."
+    long_3: "If the question involves comparisons (such as largest, smallest, increase, or difference), perform the necessary reasoning over the chart data before giving a concise final answer."
+    distractor_1: "Do not infer trends beyond what the chart shows; restrict your answer to information that can be justified from the retrieved chart."
+    distractor_2: "Multiple similar colors or markers might appear; match them carefully to the legend before interpreting the data."
+    distractor_3: "Ignore decorative elements and focus only on the encoded data that matters for the question."
+  tqt: "Use only the information contained in the retrieved chart image to answer the question."
+
 VisRAG_MP-DocVQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the retrieved page from the multi-page document."
+    rephrased_2: "Based on the content of the retrieved document page, what is the answer to the question?"
+    rephrased_3: "Use the text and layout on this retrieved page to determine the answer."
+    short_1: "RAG doc QA"
+    short_2: "Retrieved page answer"
+    short_3: "MP-Doc response"
+    long_1: "Assume this page has been retrieved from a longer document as being relevant to the query. Read its text, headings, and any visible tables or figures to extract the information needed to answer the question."
+    long_2: "Even if the full document is not visible, treat this page as your evidence source. Find the passage or element that directly answers the question and respond with that information only."
+    long_3: "If the answer requires combining multiple mentions on the page, integrate them logically while staying within the content of this retrieved image."
+    distractor_1: "Ignore any assumptions about missing pages; do not rely on unseen context from the rest of the document."
+    distractor_2: "Be careful with repeated terms or values; ensure you use the occurrence that matches the question’s description (for example a particular section or entity)."
+    distractor_3: "Avoid summarizing the whole page when only a specific value or statement is requested; answer just what is asked."
+  tqt: "Answer the question using only the information on this retrieved document page."
+
 VisRAG_SlideVQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the content of the retrieved presentation slide."
+    rephrased_2: "Based on the text and graphics on this slide, what is the answer to the question?"
+    rephrased_3: "Use the retrieved slide’s content to determine the correct answer."
+    short_1: "RAG slide QA"
+    short_2: "Slide answer"
+    short_3: "Deck QA"
+    long_1: "Treat the image as a slide from a presentation that has been retrieved for the query. Read the bullet points, titles, diagrams, and any annotations, and use them to answer the question directly."
+    long_2: "Slides often summarize information rather than giving full prose. Interpret abbreviations and structure in context, but base your answer only on what is explicitly or clearly implied on the slide."
+    long_3: "If there are multiple sections or diagrams, identify which one relates to the question before extracting the answer in a brief phrase or value."
+    distractor_1: "Do not assume additional slides from the same deck; use only this slide as your evidence for answering."
+    distractor_2: "Highlight or decorative text may not be relevant to the question; focus on the substantive content that carries meaning."
+    distractor_3: "When numeric values or labels appear in a figure on the slide, read them carefully rather than estimating from rough positions."
+  tqt: "Use only the information on this retrieved presentation slide to answer the question."
+
 VisRAG_InfoVQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the content of the retrieved infographic."
+    rephrased_2: "Based on this retrieved infographic, what is the correct answer to the question?"
+    rephrased_3: "Use the text and visual elements on the retrieved infographic to answer the question."
+    short_1: "RAG infographic QA"
+    short_2: "Retrieved info answer"
+    short_3: "InfoVQA response"
+    long_1: "Assume this infographic has been retrieved as relevant to the question. Read its titles, labels, legends, and any embedded text or icons to locate the information needed to answer."
+    long_2: "Interpret the visual encodings (such as bars, icons, or segments) using the provided legend and captions, and then compute or retrieve the answer requested by the question."
+    long_3: "If the question requires comparing categories or identifying extremes, reason over the infographic’s data representations before giving a concise answer."
+    distractor_1: "Avoid using background or decorative artwork that does not carry data or factual content when forming your answer."
+    distractor_2: "Check that you match the correct category or time period in the infographic to the one mentioned in the question."
+    distractor_3: "Do not extrapolate beyond the values explicitly or clearly indicated in the infographic."
+  tqt: "Answer the question using only the information shown in the retrieved infographic image."
+
 VisRAG_PlotQA:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the data shown in the retrieved plot."
+    rephrased_2: "Based on the axes, legend, and curves in this plot, what is the answer to the question?"
+    rephrased_3: "Interpret the retrieved plot and determine the correct answer."
+    short_1: "RAG plot QA"
+    short_2: "Plot data answer"
+    short_3: "Graph QA"
+    long_1: "Treat the image as a relevant plot selected by retrieval. Examine its axes labels, scales, legend, and plotted points or lines, and extract or compute the answer requested."
+    long_2: "Be precise in reading values from the plot, taking into account whether scales are linear or logarithmic and how categories or series are encoded."
+    long_3: "If the question asks about trends, minimums, maximums, or relationships between series, reason over the shapes and positions in the plot before giving a short final answer."
+    distractor_1: "Do not rely on approximate guesses when the plot clearly indicates specific values; read the chart as carefully as possible."
+    distractor_2: "Confirm that the variable and unit you are using match the ones mentioned in the question."
+    distractor_3: "Ignore stylistic elements like background grids or shading that do not affect the underlying data."
+  tqt: "Use the retrieved plot alone to read the data and answer the question."
+
 ViDoSeek-page:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the information on this retrieved document page."
+    rephrased_2: "Based on the content of this page, what is the correct answer to the question?"
+    rephrased_3: "Use the text, figures, and tables on this retrieved page to answer the question."
+    short_1: "Page-level QA"
+    short_2: "Retrieved page answer"
+    short_3: "ViDoSeek page"
+    long_1: "Assume that this page has been retrieved from a document collection as relevant to the question. Read all visible content—text blocks, headings, tables, and figures—and identify the evidence needed to answer."
+    long_2: "Do not assume access to other pages; treat this single page as your only evidence. Locate the specific segment that addresses the query and extract the answer from there."
+    long_3: "If the answer requires synthesizing information across multiple elements on the same page, combine them logically while keeping your final answer short and focused."
+    distractor_1: "Ignore unrelated sections on the page that do not contribute to answering the question."
+    distractor_2: "Be careful to distinguish between examples, definitions, and conclusions so that you use the correct statement in your answer."
+    distractor_3: "Avoid speculating about context that might appear on other pages; remain grounded in what is visible here."
+  tqt: "Answer the question using only the information contained on this single retrieved page."
+
 ViDoSeek-doc:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the information in the retrieved document."
+    rephrased_2: "Based on the content shown from this retrieved document, what is the answer to the question?"
+    rephrased_3: "Use the available pages of the retrieved document to determine the correct answer."
+    short_1: "Document-level QA"
+    short_2: "Retrieved doc answer"
+    short_3: "ViDoSeek doc"
+    long_1: "Assume that the images you see come from a document retrieved as relevant. Read the provided pages, including text, tables, and figures, and identify the information necessary to answer the question."
+    long_2: "Integrate evidence across the visible pages if needed, keeping track of entities, definitions, and values as they appear in different sections of the document."
+    long_3: "Even though the original document may be longer, restrict your reasoning to the content that is shown and provide a concise answer derived from that content."
+    distractor_1: "Do not assume information from unseen pages; answer only from evidence visible in the retrieved document images."
+    distractor_2: "Be cautious about similar terms or values appearing on different pages; ensure you select the one that matches the question’s description."
+    distractor_3: "Avoid summarizing the entire document when the question asks for a specific fact or value; respond with just what is needed."
+  tqt: "Use only the content of the retrieved document images to answer the question."
+
 MMLongBench-doc:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using the information in this long multi-page document."
+    rephrased_2: "From the content of the provided document pages, determine the correct answer to the question."
+    rephrased_3: "Use the long document context to reason out the answer to the question."
+    short_1: "Long-doc QA"
+    short_2: "Multi-page answer"
+    short_3: "Doc-longbench"
+    long_1: "You are given multiple pages from a long document. Navigate the content logically, locate the sections that pertain to the question, and integrate the relevant information to produce a precise answer."
+    long_2: "Track entities, definitions, and references across pages, as long context may require you to connect information from distant parts of the document."
+    long_3: "Despite the length of the document, keep your response focused on the specific question, providing only the necessary fact, value, or short explanation derived from the pages shown."
+    distractor_1: "Do not get distracted by unrelated sections in the long document; focus on paragraphs, tables, or figures that clearly address the query."
+    distractor_2: "Be careful with cross-references, such as \"as shown above\" or \"see Table 2\"; identify the actual referenced content before answering."
+    distractor_3: "Avoid hallucinating details that are not explicitly or implicitly supported by the document; stay grounded in the provided pages."
+  tqt: "Answer the question by carefully using the full long-document context provided, without relying on external information."
+
 MMLongBench-page:
   qry:
-  tqt:
+    rephrased_1: "Answer the question using only the information on this single long-context page."
+    rephrased_2: "From the content of this page, determine the correct answer to the question."
+    rephrased_3: "Use the text and structures on this page to answer the question."
+    short_1: "Long-page QA"
+    short_2: "Page-longbench"
+    short_3: "Single-page answer"
+    long_1: "You are shown one page from a longer document that may contain dense or lengthy content. Read this page carefully and identify the information that resolves the question."
+    long_2: "Even if the page references other parts of the document, restrict your reasoning to what appears here and infer the answer using only this visible context."
+    long_3: "If the question is complex, break it down and match each part to the relevant portion of the page before composing a concise final answer."
+    distractor_1: "Ignore references to other pages or sections that you cannot see; do not assume their content."
+    distractor_2: "Do not summarize the entire page when the question asks for a specific detail; extract just the required information."
+    distractor_3: "Avoid introducing outside knowledge that is not supported by the page; base your answer solely on what is shown."
+  tqt: "Use only the information on this single page from the long document to answer the question."

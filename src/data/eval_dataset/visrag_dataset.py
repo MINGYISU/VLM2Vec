@@ -1,10 +1,12 @@
 import os
 import hashlib
+import yaml
 
 from src.constant.dataset_hf_path import EVAL_DATASET_HF_PATH
 from src.data.eval_dataset.base_eval_dataset import AutoEvalPairDataset, add_metainfo_hook, RESOLUTION_MAPPING, ImageVideoInstance
 from src.utils.dataset_utils import load_hf_dataset, sample_dataset, load_qrels_mapping
 from src.model.processor import process_input_text
+from src.utils.basic_utils import print_master
 
 
 TASK_INST_QRY = "Find a document image that matches the given query:"
@@ -18,9 +20,13 @@ def data_prepare(batch_dict, **kwargs):
     qrels_mapping = kwargs['qrels_mapping']
     image_root = kwargs['image_root']
 
+    query_instruction_prompt = kwargs['query_instruction_prompt'] if kwargs['query_instruction_prompt'] is not None else TASK_INST_QRY
+    target_instruction_prompt = kwargs['target_instruction_prompt'] if kwargs['target_instruction_prompt'] is not None else TASK_INST_TGT
+    assert not (query_instruction_prompt is TASK_INST_QRY or target_instruction_prompt is TASK_INST_QRY)
+
     query_texts, query_images, cand_texts, cand_images, dataset_infos = [], [], [], [], []
     for query_id, query in zip(batch_dict['query-id'], batch_dict['query']):
-        query_texts.append([process_input_text(TASK_INST_QRY, model_backbone, text=query)])
+        query_texts.append([process_input_text(query_instruction_prompt, model_backbone, text=query)])
         query_images.append([None])
         cand_text, cand_image, cand_names, label_names = [], [], [], []
         rel_scores = []
@@ -33,7 +39,7 @@ def data_prepare(batch_dict, **kwargs):
             image_path = f'{image_root}/{new_imagename}'
             if not os.path.exists(image_path):
                 raise FileNotFoundError(f'Image path {image_path} not found.')
-            cand_text.append(process_input_text(TASK_INST_TGT, model_backbone, add_image_token=True))
+            cand_text.append(process_input_text(target_instruction_prompt, model_backbone, add_image_token=True))
             cand_image.append(ImageVideoInstance(
                 bytes=[None],
                 paths=[image_path],
@@ -59,6 +65,10 @@ def corpus_prepare(batch_dict, *args, **kwargs):
     image_resolution, model_backbone = kwargs['image_resolution'], kwargs['model_backbone']
     image_root = kwargs['image_root']
 
+    query_instruction_prompt = kwargs['query_instruction_prompt'] if kwargs['query_instruction_prompt'] is not None else TASK_INST_QRY
+    target_instruction_prompt = kwargs['target_instruction_prompt'] if kwargs['target_instruction_prompt'] is not None else TASK_INST_TGT
+    print_master(f'Using default: {query_instruction_prompt is TASK_INST_QRY and target_instruction_prompt is TASK_INST_QRY}')
+
     cand_texts, cand_images, dataset_infos = [], [], []
     for image_name, image in zip(batch_dict['corpus-id'], batch_dict['image']):
         # some image_name are super long...
@@ -69,7 +79,7 @@ def corpus_prepare(batch_dict, *args, **kwargs):
         if not os.path.exists(image_path):
             os.makedirs(image_root, exist_ok=True)
             image.save(image_path)
-        cand_texts.append([process_input_text(TASK_INST_TGT, model_backbone, add_image_token=True)])
+        cand_texts.append([process_input_text(target_instruction_prompt, model_backbone, add_image_token=True)])
         cand_images.append([ImageVideoInstance(
             bytes=[None],
             paths=[image_path],
@@ -86,8 +96,9 @@ def corpus_prepare(batch_dict, *args, **kwargs):
 DATASET_PARSER_NAME = "visrag"
 @AutoEvalPairDataset.register(DATASET_PARSER_NAME)
 def load_visrag_dataset(model_args, data_args, **kwargs):
-    hf_dataset_name = EVAL_DATASET_HF_PATH[kwargs['dataset_name']][0]
-    hf_dataset_split = EVAL_DATASET_HF_PATH[kwargs['dataset_name']][2]
+    dataset_name = kwargs['dataset_name']
+    hf_dataset_name = EVAL_DATASET_HF_PATH[dataset_name][0]
+    hf_dataset_split = EVAL_DATASET_HF_PATH[dataset_name][2]
     # BEIR format
     qrels = load_hf_dataset((hf_dataset_name, "qrels", hf_dataset_split))
     corpus = load_hf_dataset((hf_dataset_name, "corpus", hf_dataset_split))
@@ -99,12 +110,24 @@ def load_visrag_dataset(model_args, data_args, **kwargs):
     kwargs['image_resolution'] = data_args.image_resolution
     kwargs['qrels_mapping'] = qrels_mapping
 
+    if data_args.query_instruction_prompt_file:
+        with open(data_args.query_instruction_prompt_file, 'r') as f:
+            prompt_list = yaml.load(f, Loader=yaml.FullLoader)
+        if data_args.query_instruction_prompt_id in prompt_list[dataset_name]['qry']:
+            kwargs['query_instruction_prompt'] = prompt_list[dataset_name]['qry'][data_args.query_instruction_prompt_id]
+            kwargs['target_instruction_prompt'] = prompt_list[dataset_name]['tqt']
+        else:
+            raise ValueError(f"query_instruction_prompt_id {data_args.query_instruction_prompt_id} not found in prompt_list.yaml")
+    else:
+        kwargs['query_instruction_prompt'] = None # default None
+        kwargs['target_instruction_prompt'] = None
+
     corpus = corpus.map(lambda x: corpus_prepare(x, **kwargs), batched=True,
-                        batch_size=1024, num_proc=4,
+                        batch_size=1024, num_proc=8,
                         drop_last_batch = False, load_from_cache_file=False)
     corpus = corpus.select_columns(['cand_text', 'cand_image', 'dataset_infos'])
     dataset = dataset.map(lambda x: data_prepare(x, **kwargs), batched=True,
-                          batch_size=1024, num_proc=4,
+                          batch_size=1024, num_proc=8,
                           drop_last_batch = False, load_from_cache_file=False)
     dataset = dataset.select_columns(["query_text", "query_image", "cand_text", "cand_image", "dataset_infos"])
 

@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
     prompt_id="short_1"
 else
     prompt_id="$1"
-    echo "Using custom prompt: $prompt"
+    echo "Using provied prompt: $prompt"
 fi
 export CUDA_VISIBLE_DEVICES="0,1,2,3"
 
@@ -20,8 +20,8 @@ CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES torchrun --nproc_per_node=4 --master_
     --pooling eos \
     --normalize true \
     --per_device_eval_batch_size 8 \
-    --model_backbone gme \
-    --model_name Alibaba-NLP/gme-Qwen2-VL-7B-Instruct \
+    --model_backbone qwen2_vl \
+    --model_name VLM2Vec/VLM2Vec-V2.0 \
     --dataset_config experiments/public/eval/prompt_test.yaml \
     --query_instruction_prompt_file experiments/public/eval/prompt_list.yaml \
     --query_instruction_prompt_id "$prompt_id" \
